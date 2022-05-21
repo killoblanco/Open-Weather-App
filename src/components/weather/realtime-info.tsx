@@ -3,9 +3,9 @@ import { CSSProperties } from 'react'
 import { useRealtimeQuery } from '../../duck/api'
 import { useGeo } from '../../hooks/use-geo'
 import { Box } from '../atoms/box'
-import SettingsBtn from '../buttons/settings-btn'
 import { SunkenText } from '../atoms/sunken-text'
 import { Text } from '../atoms/text'
+import SettingsBtn from '../buttons/settings-btn'
 
 const styles = {
   root: (theme: Theme): CSSProperties => ({
@@ -40,7 +40,9 @@ function RealtimeWeatherInfo() {
         <SettingsBtn />
       </Box>
       <Box sx={styles.row('space-evenly')}>
-        <SunkenText variant="display1">{data.current.tempC}º</SunkenText>
+        <Box>
+          <SunkenText variant="display1">{data.current.tempC}º</SunkenText>
+        </Box>
       </Box>
       <SunkenText variant="display3">{data.current.condition.text}</SunkenText>
       <Box sx={styles.row('space-evenly')}>
