@@ -1,5 +1,5 @@
 import { Theme, ThemeProvider } from '@emotion/react'
-import { createContext, PropsWithChildren, useMemo, useState } from 'react'
+import { createContext, PropsWithChildren, useContext, useMemo, useState } from 'react'
 import { ColorPaletteMap } from './colors'
 import GlobalStyles from './globals'
 import { theme } from './theme'
@@ -50,5 +50,7 @@ function StylesProvider({ children }: PropsWithChildren<unknown>) {
     </ThemeCtx.Provider>
   )
 }
+
+export const useThemeCtx = () => useContext(ThemeCtx)
 
 export default StylesProvider
