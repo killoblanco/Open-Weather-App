@@ -9,7 +9,8 @@ import { Text } from '../atoms/text'
 const styles = {
   root: (theme: Theme) => ({
     display: 'flex',
-    gap: theme.spacing(2)
+    gap: theme.spacing(2),
+    overflow: 'auto'
   }),
   color: {
     container: (theme: Theme): CSSProperties => ({
