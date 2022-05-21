@@ -1,6 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { parseAstronomyResponse, parseCurrentResponse, parseLocationResponse } from './utils'
 
+const buildUrl = (path: string, q: string, lang: string = 'es') => `${path}.json?${new URLSearchParams({ q, lang })}`
+
 export const weatherApi = createApi({
   reducerPath: 'api.weather',
   baseQuery: fetchBaseQuery({
@@ -14,7 +16,7 @@ export const weatherApi = createApi({
   endpoints: (builder) => ({
     searchCity: builder.query<WeatherApiState['search'], string>({
       query: (location) => ({
-        url: `search.json?${new URLSearchParams({ q: location })}`,
+        url: buildUrl('search', location),
         method: 'GET'
       })
     }),
@@ -23,7 +25,7 @@ export const weatherApi = createApi({
       current: WeatherApiState['current']
     }, string>({
       query: (location) => ({
-        url: `current.json?${new URLSearchParams({ q: location })}`,
+        url: buildUrl('current', location),
         method: 'GET'
       }),
       transformResponse: (response: any) => ({
@@ -33,7 +35,7 @@ export const weatherApi = createApi({
     }),
     astronomy: builder.query<WeatherApiState['astronomy'], string>({
       query: (location) => ({
-        url: `astronomy.json?${new URLSearchParams({ q: location })}`,
+        url: buildUrl('astronomy', location),
         method: 'GET'
       }),
       transformResponse: (response: any) => parseAstronomyResponse(response.astronomy.astro)
@@ -44,5 +46,5 @@ export const weatherApi = createApi({
 export const {
   useSearchCityQuery,
   useRealtimeQuery,
-  useAstronomyQuery,
+  useAstronomyQuery
 } = weatherApi
