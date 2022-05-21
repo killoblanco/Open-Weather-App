@@ -4,13 +4,19 @@ import MainScreen from './main'
 import NewLocationScreen from './new-location'
 import SettingsScreen from './settings'
 
+export const routes = {
+  main: () => '/',
+  newLocation: () => '/new-location',
+  settings: () => '/settings'
+}
+
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainScreen />} />
-        <Route path="/new-location" element={<NewLocationScreen />} />
-        <Route path="/settings" element={<SettingsScreen />} />
+        <Route path={routes.main()} element={<MainScreen />} />
+        <Route path={routes.newLocation()} element={<NewLocationScreen />} />
+        <Route path={routes.settings()} element={<SettingsScreen />} />
         <Route path="*" element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>
