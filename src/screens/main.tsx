@@ -1,7 +1,7 @@
+import RealtimeWeatherInfo from '../components/weather/realtime-info'
+
 function MainScreen() {
-  return (
-    <div>main screen</div>
-  )
+  return (<RealtimeWeatherInfo />)
 }
 
 export default MainScreen
