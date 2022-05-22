@@ -18,7 +18,7 @@ function PressureCard({ current }: { current: WeatherApiState['current'] }) {
         <SpeedTwoTone fontSize="small" />
         <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>presión</Text>
       </Box>
-      <Text variant="h1">{current.pressureMb} Km</Text>
+      <Text variant="h1">{current.pressureMb} hPa</Text>
     </Card>
   )
 }
