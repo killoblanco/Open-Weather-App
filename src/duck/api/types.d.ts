@@ -61,28 +61,62 @@ interface WeatherApiState {
     date: string;
     dateEpoch: number;
     day: {
-      maxtempC:number;
-      maxtempF:number;
-      mintempC:number;
-      mintempF:number;
-      avgtempC:number;
-      avgtempF:number;
-      maxwindMph:number;
-      maxwindKph:number;
-      totalprecipMm:number;
-      totalprecipIn:number;
-      avgvisKm:number;
-      avgvisMiles:number;
-      avghumidity:number;
-      dailyWillItRain:number;
-      dailyChanceOfRain:number;
-      dailyWillItSnow:number;
-      dailyChanceOfSnow:number;
+      maxtempC: number;
+      maxtempF: number;
+      mintempC: number;
+      mintempF: number;
+      avgtempC: number;
+      avgtempF: number;
+      maxwindMph: number;
+      maxwindKph: number;
+      totalprecipMm: number;
+      totalprecipIn: number;
+      avgvisKm: number;
+      avgvisMiles: number;
+      avghumidity: number;
+      dailyWillItRain: number;
+      dailyChanceOfRain: number;
+      dailyWillItSnow: number;
+      dailyChanceOfSnow: number;
       condition: WeatherCondition
-      uv:number;
+      uv: number;
     }
     astro: WeatherApiState['astronomy']
-    hour: {}[]
+    hour: {
+      timeEpoch: number;
+      time: string;
+      tempC: number;
+      tempF: number;
+      isDay: number;
+      condition: WeatherCondition;
+      windMph: number;
+      windKph: number;
+      windDegree: number;
+      windDir: string;
+      pressureMb: number;
+      pressureIn: number;
+      precipMm: number;
+      precipIn: number;
+      humidity: number;
+      cloud: number;
+      feelslikeC: number;
+      feelslikeF: number;
+      windchillC: number;
+      windchillF: number;
+      heatindexC: number;
+      heatindexF: number;
+      dewpointC: number;
+      dewpointF: number;
+      willItRain: number;
+      chanceOfRain: number;
+      willItSnow: number;
+      chanceOfSnow: number;
+      visKm: number;
+      visMiles: number;
+      gustMph: number;
+      gustKph: number;
+      uv: number;
+    }[]
   }[]
 }
 
