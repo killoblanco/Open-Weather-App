@@ -1,6 +1,7 @@
 import { Theme } from '@emotion/react'
 import { useAstronomyQuery, useForecastQuery } from '../../duck/api'
 import { Box } from '../atoms/box'
+import ForecastDay from '../forecast/day'
 import FeelsLikeCard from '../weather/cards/feels-like'
 import HumidityCard from '../weather/cards/humidity'
 import PrecipCard from '../weather/cards/precip'
@@ -15,7 +16,7 @@ const styles = {
   root: (theme: Theme): any => ({
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(2)
+    gap: theme.spacing(6)
   }),
   cards: (theme: Theme): any => ({
     display: 'flex',
@@ -40,6 +41,7 @@ function LocationWeatherLayout({ location }: { location: string }) {
   return (
     <Box sx={styles.root}>
       <RealtimeWeatherInfo weather={forecastData} />
+      <ForecastDay day={forecastData.forecast[0].hour} />
       <Box sx={styles.cards}>
         <UvCard uv={forecastData.current.uv} />
         <SunRiseSetCard astro={astronomyData} />
