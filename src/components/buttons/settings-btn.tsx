@@ -6,7 +6,8 @@ import { routes } from '../../screens/router'
 const Btn = styled(Link)(({ theme }) => ({
   padding: theme.spacing(1),
   '& svg': {
-    fontSize: theme.spacing(4)
+    fontSize: theme.spacing(4),
+    color: theme.colors.main[theme.colors.mode].secondary
   }
 }))
 
