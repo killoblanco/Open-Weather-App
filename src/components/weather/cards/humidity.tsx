@@ -5,6 +5,7 @@ import { Card } from '../../atoms/card'
 import { Text } from '../../atoms/text'
 
 const styles = {
+  root: { justifyContent: 'space-between' },
   row: (theme: Theme) => ({
     display: 'flex',
     gap: theme.spacing(1)
@@ -13,12 +14,12 @@ const styles = {
 
 function HumidityCard({ current }: { current: WeatherApiState['current'] }) {
   return (
-    <Card>
+    <Card sx={styles.root}>
       <Box sx={styles.row}>
         <WavesTwoTone fontSize="small" />
         <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>humedad</Text>
       </Box>
-      <Text variant="h1">{current.humidity} %</Text>
+      <Text variant="display1">{current.humidity}%</Text>
     </Card>
   )
 }
