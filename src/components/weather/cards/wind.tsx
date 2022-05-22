@@ -3,8 +3,10 @@ import { AirTwoTone } from '@mui/icons-material'
 import { Box } from '../../atoms/box'
 import { Card } from '../../atoms/card'
 import { Text } from '../../atoms/text'
+import WindMeter from '../meters/wind'
 
 const styles = {
+  root: { justifyContent: 'space-between' },
   row: (theme: Theme) => ({
     display: 'flex',
     gap: theme.spacing(1)
@@ -13,13 +15,12 @@ const styles = {
 
 function WindCard({ current }: { current: WeatherApiState['current'] }) {
   return (
-    <Card>
+    <Card sx={styles.root}>
       <Box sx={styles.row}>
         <AirTwoTone fontSize="small" />
         <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>viento</Text>
       </Box>
-      <Text variant="h1">{current.windKph}</Text>
-      <Text variant="subtitle1">Km/h</Text>
+      <WindMeter current={current} />
     </Card>
   )
 }
