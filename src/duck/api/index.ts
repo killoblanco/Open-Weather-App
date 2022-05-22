@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { parseAstronomyResponse, parseCurrentResponse, parseLocationResponse } from './utils'
 
-const buildUrl = (path: string, q: string, lang: string = 'es') => `${path}.json?${new URLSearchParams({ q, lang })}`
+const buildUrl = (path: string, searchParams: any) => `${path}.json?${new URLSearchParams(searchParams)}`
 
 export const weatherApi = createApi({
   reducerPath: 'api.weather',
@@ -16,7 +16,7 @@ export const weatherApi = createApi({
   endpoints: (builder) => ({
     searchCity: builder.query<WeatherApiState['search'], string>({
       query: (location) => ({
-        url: buildUrl('search', location),
+        url: buildUrl('search', { q: location }),
         method: 'GET'
       })
     }),
@@ -25,7 +25,7 @@ export const weatherApi = createApi({
       current: WeatherApiState['current']
     }, string>({
       query: (location) => ({
-        url: buildUrl('current', location),
+        url: buildUrl('current', { q: location }),
         method: 'GET'
       }),
       transformResponse: (response: any) => ({
@@ -35,10 +35,21 @@ export const weatherApi = createApi({
     }),
     astronomy: builder.query<WeatherApiState['astronomy'], string>({
       query: (location) => ({
-        url: buildUrl('astronomy', location),
+        url: buildUrl('astronomy', { q: location }),
         method: 'GET'
       }),
       transformResponse: (response: any) => parseAstronomyResponse(response.astronomy.astro)
+    }),
+    forecast: builder.query<ForecastQueryResponse, string>({
+      query: (location) => ({
+        url: buildUrl('forecast', { q: location, days: 6 }),
+        method: 'GET'
+      }),
+      transformResponse: (response: any) => ({
+        location: parseLocationResponse(response.location),
+        current: parseCurrentResponse(response.current),
+        forecast: response.forecast.forecastday,
+      })
     })
   })
 })
@@ -46,5 +57,6 @@ export const weatherApi = createApi({
 export const {
   useSearchCityQuery,
   useRealtimeQuery,
-  useAstronomyQuery
+  useAstronomyQuery,
+  useForecastQuery,
 } = weatherApi
