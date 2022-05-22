@@ -1,7 +1,13 @@
-import RealtimeWeatherInfo from '../components/weather/realtime-info'
+import LocationWeatherLayout from '../components/layout/location-weather'
+import { useGeo } from '../hooks/use-geo'
 
 function MainScreen() {
-  return (<RealtimeWeatherInfo />)
+  const geo = useGeo()
+  const location = geo ? `${geo.coords.latitude},${geo.coords.longitude}` : 'auto:ip'
+
+  return (
+    <LocationWeatherLayout location={location} />
+  )
 }
 
 export default MainScreen
