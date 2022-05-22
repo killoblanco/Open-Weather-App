@@ -17,7 +17,7 @@ function PrecipCard({ current }: { current: WeatherApiState['current'] }) {
     <Card sx={styles.root}>
       <Box sx={styles.row}>
         <OpacityTwoTone fontSize="small" />
-        <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>precipitacion</Text>
+        <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>precipitación</Text>
       </Box>
       <Text variant="display3">{current.precipMm} mm</Text>
     </Card>
