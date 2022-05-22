@@ -3,8 +3,10 @@ import { SpeedTwoTone } from '@mui/icons-material'
 import { Box } from '../../atoms/box'
 import { Card } from '../../atoms/card'
 import { Text } from '../../atoms/text'
+import PressureMeter from '../meters/pressure'
 
 const styles = {
+  root: { justifyContent: 'space-between' },
   row: (theme: Theme) => ({
     display: 'flex',
     gap: theme.spacing(1)
@@ -13,12 +15,12 @@ const styles = {
 
 function PressureCard({ current }: { current: WeatherApiState['current'] }) {
   return (
-    <Card>
+    <Card sx={styles.root}>
       <Box sx={styles.row}>
         <SpeedTwoTone fontSize="small" />
         <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>presión</Text>
       </Box>
-      <Text variant="h1">{current.pressureMb} hPa</Text>
+      <PressureMeter current={current} />
     </Card>
   )
 }
