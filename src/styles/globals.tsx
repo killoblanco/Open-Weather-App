@@ -13,11 +13,8 @@ function GlobalStyles() {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.spacing(2)
     },
-    '*': {
-      margin: 0,
-      padding: 0,
-      color: theme.colors.main[theme.colors.mode].onBackground
-    },
+    '*': { margin: 0, padding: 0 },
+    'svg': { color: theme.colors.main[theme.colors.mode].secondary },
     body: {
       margin: 0,
       backgroundColor: theme.colors.main[theme.colors.mode].background
