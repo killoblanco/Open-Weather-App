@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-import { parseAstronomyResponse, parseCurrentResponse, parseLocationResponse } from './utils'
+import { parseAstronomyResponse, parseCurrentResponse, parseForecastResponse, parseLocationResponse } from './utils'
 
 const buildUrl = (path: string, searchParams: any) => `${path}.json?${new URLSearchParams(searchParams)}`
 
@@ -48,7 +48,7 @@ export const weatherApi = createApi({
       transformResponse: (response: any) => ({
         location: parseLocationResponse(response.location),
         current: parseCurrentResponse(response.current),
-        forecast: response.forecast.forecastday,
+        forecast: parseForecastResponse(response.forecast.forecastday),
       })
     })
   })
