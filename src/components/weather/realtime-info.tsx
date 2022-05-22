@@ -27,7 +27,7 @@ function RealtimeWeatherInfo({ weather }: { weather: ForecastQueryResponse }) {
         <SettingsBtn />
       </Box>
       <Box sx={styles.row('space-evenly')}>
-        <SunkenText variant="display1">{weather.current.tempC} ºC</SunkenText>
+        <SunkenText variant="display1">{weather.current.tempC}º</SunkenText>
       </Box>
       <SunkenText variant="display3">{weather.current.condition.text}</SunkenText>
     </Box>
