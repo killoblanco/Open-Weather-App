@@ -10,7 +10,16 @@ export const spacing = (all: number, leftRight?: number, bottom?: number, left?:
 }
 
 export const theme = {
+  borderRadius: 12,
   colors,
   spacing,
-  typography
+  transitions: {
+    timing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    duration: {
+      quick: '200ms',
+      fast: '250ms',
+      normal: '300ms',
+    }
+  },
+  typography,
 }
