@@ -4,8 +4,8 @@ import { CSSProperties } from 'react'
 const compassStops = (theme: Theme) => Array
   .from({ length: 241 }, (_, i) => i + 1)
   .map(degree => degree % 2 === 0
-    ? `${theme.colors.main[theme.colors.mode].onPrimaryContainer}44`
-    : `${theme.colors.main[theme.colors.mode].primaryContainer}44`
+    ? `${theme.colors.main[theme.colors.mode].onSecondaryContainer}44`
+    : `${theme.colors.main[theme.colors.mode].secondaryContainer}44`
   ).join(', ')
 
 const root: CSSProperties = {
@@ -52,7 +52,7 @@ const compass = (deg: number) => (theme: Theme): any => ({
 
 const compassStop = (theme: Theme) => ({
   backgroundImage: `
-    radial-gradient(circle at center, ${theme.colors.main[theme.colors.mode].primaryContainer} 62%, transparent 30%),
+    radial-gradient(circle at center, ${theme.colors.main[theme.colors.mode].secondaryContainer} 62%, transparent 30%),
     conic-gradient(from 0deg at center, ${compassStops(theme)})
   `,
   borderRadius: '50%',
