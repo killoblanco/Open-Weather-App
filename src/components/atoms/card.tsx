@@ -9,6 +9,6 @@ export const Card = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   padding: theme.spacing(1.5),
-  width: '100%',
+  width: theme.spacing(19.8),
   '& *': { color: theme.colors.main[theme.colors.mode].onPrimaryContainer }
 }))
