@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "red": "punainen",
+    "pink": "vaaleanpunainen",
+    "purple": "violetti",
+    "deep_purple": "syvä violetti",
+    "indigo": "indigo",
+    "blue": "sininen",
+    "light_blue": "Vaaleansininen",
+    "cyan": "syaani",
+    "teal": "sinivihreä",
+    "green": "vihreä",
+    "light_green": "vaaleanvihreä",
+    "lime": "lime",
+    "yellow": "keltainen",
+    "amber": "keltainen",
+    "orange": "oranssi",
+    "deep_orange": "syvä oranssi"
+  },
+  "compass": {
+    "north": "P",
+    "east": "I",
+    "south": "E",
+    "west": "I"
+  },
+  "settings": {
+    "settings": "asetukset",
+    "color": "väri",
+    "modeLight": "valotila",
+    "modeDark": "tumma tila",
+    "tempUnit": "lämpötilayksikkö",
+    "measUnit": "mittayksikkö",
+    "lang": "Kieli"
+  },
+  "weather": {
+    "uv": "UV-indeksi",
+    "sunrise": "auringonnousu",
+    "sunset": "auringonlasku",
+    "wind": "tuuli",
+    "precip": "sademäärä",
+    "feelsLike": "tunne",
+    "humidity": "kosteus",
+    "visibility": "näkyvyys",
+    "pressure": "Paine"
+  }
+}
