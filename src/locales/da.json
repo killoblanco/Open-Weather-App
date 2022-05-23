@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "red": "rød",
+    "pink": "lyserød",
+    "purple": "lilla",
+    "deep_purple": "mørke lilla",
+    "indigo": "indigo",
+    "blue": "blå",
+    "light_blue": "Lyseblå",
+    "cyan": "cyan",
+    "teal": "krikand",
+    "green": "grøn",
+    "light_green": "lysegrøn",
+    "lime": "Citron",
+    "yellow": "gul",
+    "amber": "rav",
+    "orange": "orange",
+    "deep_orange": "dyb orange"
+  },
+  "compass": {
+    "north": "N",
+    "east": "Ø",
+    "south": "S",
+    "west": "V"
+  },
+  "settings": {
+    "settings": "indstillinger",
+    "color": "farve",
+    "modeLight": "lystilstand",
+    "modeDark": "mørk tilstand",
+    "tempUnit": "temperaturenhed",
+    "measUnit": "måleenhed",
+    "lang": "Sprog"
+  },
+  "weather": {
+    "uv": "UV-indeks",
+    "sunrise": "solopgang",
+    "sunset": "solnedgang",
+    "wind": "vind",
+    "precip": "nedbør",
+    "feelsLike": "sensation",
+    "humidity": "fugtighed",
+    "visibility": "sigtbarhed",
+    "pressure": "Tryk"
+  }
+}
