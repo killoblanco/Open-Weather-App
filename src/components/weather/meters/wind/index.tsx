@@ -1,17 +1,20 @@
 import { CircleTwoTone, RemoveTwoTone, SendTwoTone } from '@mui/icons-material'
+import { useTranslation } from 'react-i18next'
 import { Box } from '../../../atoms/box'
 import { Text } from '../../../atoms/text'
 import { styles } from './styles'
 
 function WindMeter({ current }: { current: WeatherApiState['current'] }) {
+  const { t } = useTranslation()
+
   return (
     <Box sx={styles.root}>
       <Box sx={styles.compassStop} />
       <Box sx={styles.compassCardinals}>
-        <Box> <RemoveTwoTone /> <Text variant="caption">N</Text> </Box>
-        <Box> <RemoveTwoTone /> <Text variant="caption">E</Text> </Box>
-        <Box> <RemoveTwoTone /> <Text variant="caption">S</Text> </Box>
-        <Box> <RemoveTwoTone /> <Text variant="caption">O</Text> </Box>
+        <Box> <RemoveTwoTone /> <Text variant="caption">{t('compass.north')}</Text> </Box>
+        <Box> <RemoveTwoTone /> <Text variant="caption">{t('compass.east')}</Text> </Box>
+        <Box> <RemoveTwoTone /> <Text variant="caption">{t('compass.south')}</Text> </Box>
+        <Box> <RemoveTwoTone /> <Text variant="caption">{t('compass.west')}</Text> </Box>
       </Box>
       <Box sx={styles.compass(current.windDegree || 0)}>
         <SendTwoTone fontSize="small" />
