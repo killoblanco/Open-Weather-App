@@ -1,7 +1,9 @@
 import { Theme } from '@emotion/react'
 import { useAstronomyQuery, useForecastQuery } from '../../duck/api'
+import { useSettings } from '../../hooks/use-settings'
 import { Box } from '../atoms/box'
 import ForecastDay from '../forecast/day'
+import ForecastNextDays from '../forecast/next-days'
 import FeelsLikeCard from '../weather/cards/feels-like'
 import HumidityCard from '../weather/cards/humidity'
 import PrecipCard from '../weather/cards/precip'
@@ -14,21 +16,23 @@ import RealtimeWeatherInfo from '../weather/realtime-info'
 
 const styles = {
   root: (theme: Theme): any => ({
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(6)
+    gap: theme.spacing(4),
+    overflow: 'hidden'
   }),
   cards: (theme: Theme): any => ({
     display: 'flex',
     flexWrap: 'wrap',
-    gap: theme.spacing(2),
-    '& > div': { flex: '38%' }
+    gap: theme.spacing(2)
   })
 }
 
 function LocationWeatherLayout({ location }: { location: string }) {
-  const forecast = useForecastQuery(location)
-  const astronomy = useAstronomyQuery(location)
+  const { state: { lang } } = useSettings()
+  const forecast = useForecastQuery({ q: location, lang })
+  const astronomy = useAstronomyQuery({ q: location, lang })
 
   const isLoading = forecast.isLoading || astronomy.isLoading
   const isMissingData = !forecast.data || !astronomy.data
@@ -42,6 +46,7 @@ function LocationWeatherLayout({ location }: { location: string }) {
     <Box sx={styles.root}>
       <RealtimeWeatherInfo weather={forecastData} />
       <ForecastDay day={forecastData.forecast[0].hour} />
+      <ForecastNextDays forecast={forecastData.forecast} />
       <Box sx={styles.cards}>
         <UvCard uv={forecastData.current.uv} />
         <SunRiseSetCard astro={astronomyData} />
