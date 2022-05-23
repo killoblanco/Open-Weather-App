@@ -1,5 +1,6 @@
 import { Theme } from '@emotion/react'
 import { WbSunnyTwoTone } from '@mui/icons-material'
+import { useTranslation } from 'react-i18next'
 import { Box } from '../../atoms/box'
 import { Card } from '../../atoms/card'
 import { Text } from '../../atoms/text'
@@ -14,6 +15,8 @@ const styles = {
 }
 
 function UvCard({ uv }: { uv: number }) {
+  const { t } = useTranslation()
+
   const description = (uv: number) => {
     if (uv > 2 && uv <= 5) return 'Moderado'
     if (uv > 5 && uv <= 7) return 'Alto'
@@ -26,7 +29,9 @@ function UvCard({ uv }: { uv: number }) {
     <Card sx={styles.root}>
       <Box sx={styles.row}>
         <WbSunnyTwoTone fontSize="small" />
-        <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>índice uv</Text>
+        <Text variant="subtitle2" sx={{ textTransform: 'uppercase' }}>
+          {t('weather.uv')}
+        </Text>
       </Box>
       <Text variant="display1" sx={{ textAlign: 'center' }}>{uv}</Text>
       <Text variant="subtitle1" sx={{ textAlign: 'center' }}>{description(uv)}</Text>
