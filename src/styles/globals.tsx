@@ -8,12 +8,17 @@ import '@fontsource/signika/700.css'
 function GlobalStyles() {
   const theme = useTheme()
 
-  const styles = {
+  const styles: any = {
     ':root': {
       fontFamily: theme.typography.fontFamily,
-      fontSize: theme.spacing(2)
+      fontSize: theme.spacing(2),
+      color: theme.colors.main[theme.colors.mode].onBackground
     },
-    '*': { margin: 0, padding: 0 },
+    '*': {
+      margin: 0,
+      padding: 0,
+      scrollBehavior: 'smooth'
+    },
     'svg': { color: theme.colors.main[theme.colors.mode].secondary },
     body: {
       margin: 0,
