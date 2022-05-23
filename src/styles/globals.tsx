@@ -17,7 +17,8 @@ function GlobalStyles() {
     '*': {
       margin: 0,
       padding: 0,
-      scrollBehavior: 'smooth'
+      scrollBehavior: 'smooth',
+      transition: `color, background-color ${theme.transitions.duration.quick} ${theme.transitions.timing}`,
     },
     'svg': { color: theme.colors.main[theme.colors.mode].secondary },
     body: {
