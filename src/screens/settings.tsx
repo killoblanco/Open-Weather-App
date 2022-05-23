@@ -1,6 +1,14 @@
 import { Theme } from '@emotion/react'
-import { Brightness4TwoTone, PaletteTwoTone, ThermostatTwoTone, TranslateTwoTone } from '@mui/icons-material'
+import {
+  DarkModeTwoTone,
+  LightModeTwoTone,
+  PaletteTwoTone,
+  SquareFootTwoTone,
+  ThermostatTwoTone,
+  TranslateTwoTone
+} from '@mui/icons-material'
 import { CSSProperties } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Box } from '../components/atoms/box'
 import ListItem from '../components/atoms/list-item'
 import { Text } from '../components/atoms/text'
@@ -29,6 +37,7 @@ const styles = {
 }
 
 function SettingsScreen() {
+  const { t } = useTranslation()
   const dialogs = useDialogs()
   const themeCtx = useThemeCtx()
   const settings = useSettings()
@@ -37,29 +46,36 @@ function SettingsScreen() {
     <Box sx={styles.root}>
       <Box sx={styles.row('flex-start')}>
         <BackBtn />
-        <Text variant="h4">Configuración</Text>
+        <Text variant="h4" sx={{ textTransform: 'capitalize' }}>
+          {t('settings.settings')}
+        </Text>
       </Box>
       <Box>
         <ColorSwitch />
         <ListItem
           icon={<PaletteTwoTone />}
           onClick={() => dialogs.actions.open({ title: 'color', content: 'color' })}
-          title="Color"
+          title={t('settings.color')}
         />
         <ListItem
-          icon={<Brightness4TwoTone />}
+          icon={settings.state.darkMode ? <DarkModeTwoTone /> : <LightModeTwoTone />}
           onClick={themeCtx.toggleMode}
-          title={`Modo ${settings.state.darkMode ? 'Oscuro' : 'Claro'}`}
+          title={t(settings.state.darkMode ? 'settings.modeDark' : 'settings.modeLight')}
         />
         <ListItem
           icon={<ThermostatTwoTone />}
           onClick={() => dialogs.actions.open({ title: 'temp unit', content: 'temp unit' })}
-          title="Unidad de Temperatura"
+          title={t('settings.tempUnit')}
+        />
+        <ListItem
+          icon={<SquareFootTwoTone />}
+          onClick={() => dialogs.actions.open({ title: 'temp unit', content: 'temp unit' })}
+          title={t('settings.measUnit')}
         />
         <ListItem
           icon={<TranslateTwoTone />}
           onClick={() => dialogs.actions.open({ title: 'lang', content: 'lang' })}
-          title="Idioma"
+          title={t('settings.lang')}
         />
       </Box>
     </Box>
