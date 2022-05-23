@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "red": "rouge",
+    "pink": "rose",
+    "purple": "violet",
+    "deep_purple": "violet foncé",
+    "indigo": "indigo",
+    "blue": "bleu",
+    "light_blue": "Bleu clair",
+    "cyan": "cyan",
+    "teal": "sarcelle",
+    "green": "vert",
+    "light_green": "vert clair",
+    "lime": "chaux",
+    "yellow": "Jaune",
+    "amber": "ambre",
+    "orange": "orange",
+    "deep_orange": "orange foncé"
+  },
+  "compass": {
+    "north": "N",
+    "east": "E",
+    "south": "S",
+    "west": "O"
+  },
+  "settings": {
+    "settings": "réglages",
+    "color": "Couleur",
+    "modeLight": "mode lumière",
+    "modeDark": "mode sombre",
+    "tempUnit": "Unité de température",
+    "measUnit": "unité de mesure",
+    "lang": "Langue"
+  },
+  "weather": {
+    "uv": "L'indice UV",
+    "sunrise": "lever du soleil",
+    "sunset": "le coucher du soleil",
+    "wind": "vent",
+    "precip": "précipitation",
+    "feelsLike": "sensation",
+    "humidity": "humidité",
+    "visibility": "visibilité",
+    "pressure": "Pression"
+  }
+}
