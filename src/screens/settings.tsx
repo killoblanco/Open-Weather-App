@@ -1,12 +1,14 @@
 import { Theme } from '@emotion/react'
 import { Brightness4TwoTone, PaletteTwoTone, ThermostatTwoTone, TranslateTwoTone } from '@mui/icons-material'
-import { CSSProperties, useContext } from 'react'
+import { CSSProperties } from 'react'
 import { Box } from '../components/atoms/box'
 import ListItem from '../components/atoms/list-item'
 import { Text } from '../components/atoms/text'
 import BackBtn from '../components/buttons/back-btn'
-import { ScaffoldCtx } from '../components/scaffold/context'
+import { useDialogs } from '../components/scaffold/context'
 import ColorSwitch from '../components/settings/color-switch'
+import { useSettings } from '../hooks/use-settings'
+import { useThemeCtx } from '../styles/provider'
 
 const styles = {
   root: (theme: Theme): CSSProperties => ({
@@ -27,7 +29,10 @@ const styles = {
 }
 
 function SettingsScreen() {
-  const { dialogs } = useContext(ScaffoldCtx)
+  const dialogs = useDialogs()
+  const themeCtx = useThemeCtx()
+  const settings = useSettings()
+
   return (
     <Box sx={styles.root}>
       <Box sx={styles.row('flex-start')}>
@@ -43,8 +48,8 @@ function SettingsScreen() {
         />
         <ListItem
           icon={<Brightness4TwoTone />}
-          onClick={() => dialogs.actions.open({ title: 'dark mode', content: 'dark mode' })}
-          title="Modo Oscuro"
+          onClick={themeCtx.toggleMode}
+          title={`Modo ${settings.state.darkMode ? 'Oscuro' : 'Claro'}`}
         />
         <ListItem
           icon={<ThermostatTwoTone />}
