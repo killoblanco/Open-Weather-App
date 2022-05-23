@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import i18n from '../locales'
 import { ColorPaletteMap } from '../styles/colors'
 import { RootState } from './store'
 
@@ -13,7 +14,7 @@ const initialState: SettingsState = {
   color: 'blue',
   darkMode: window.matchMedia('(prefers-color-scheme: dark)').matches,
   degMeasure: 'c',
-  lang: navigator.language
+  lang: i18n.language
 }
 
 const settingsSlice = createSlice({
