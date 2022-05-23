@@ -6,7 +6,8 @@ export const SunkenText = ({ children, ...props }: PropsWithChildren<TextProps>)
     {...props}
     sx={(theme) => ({
       fontWeight: 600,
-      color: theme.colors.main[theme.colors.mode].primary
+      color: theme.colors.main[theme.colors.mode].primary,
+      textTransform: 'capitalize'
     })}
   >
     {children}
