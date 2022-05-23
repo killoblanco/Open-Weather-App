@@ -3,33 +3,37 @@ import { CSSProperties } from 'react'
 import { Box } from '../atoms/box'
 import { SunkenText } from '../atoms/sunken-text'
 import SettingsBtn from '../buttons/settings-btn'
+import WeatherIcon from './icon'
 
 const styles = {
   root: (theme: Theme): CSSProperties => ({
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(2)
+    gap: theme.spacing(2),
+    maxWidth: theme.spacing(70),
+    width: '100%'
   }),
   row: (justify?: CSSProperties['justifyContent']) => (theme: Theme): CSSProperties => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: justify || 'space-between',
     alignItems: 'center',
-    gap: theme.spacing(2)
-  })
+    gap: theme.spacing(0)
+  }),
 }
 
 function RealtimeWeatherInfo({ weather }: { weather: ForecastQueryResponse }) {
   return (
     <Box sx={styles.root}>
       <Box sx={styles.row()}>
-        <SunkenText variant="display2">{weather.location.name}</SunkenText>
+        <SunkenText variant="display3">{weather.location.name}</SunkenText>
         <SettingsBtn />
       </Box>
-      <Box sx={styles.row('space-evenly')}>
+      <Box sx={styles.row('center')}>
+        <WeatherIcon code={weather.current.condition.code} isDay={!!weather.current.isDay} />
         <SunkenText variant="display1">{weather.current.tempC}º</SunkenText>
       </Box>
-      <SunkenText variant="display3">{weather.current.condition.text}</SunkenText>
+      <SunkenText variant="h1">{weather.current.condition.text}</SunkenText>
     </Box>
   )
 }
