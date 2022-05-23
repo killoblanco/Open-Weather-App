@@ -1,5 +1,6 @@
 import { Theme, ThemeProvider } from '@emotion/react'
 import { createContext, PropsWithChildren, useContext, useMemo, useState } from 'react'
+import { useSettings } from '../hooks/use-settings'
 import { ColorPaletteMap } from './colors'
 import GlobalStyles from './globals'
 import { theme } from './theme'
@@ -17,28 +18,27 @@ const ThemeCtx = createContext<ThemeCtxT>({
 })
 
 function StylesProvider({ children }: PropsWithChildren<unknown>) {
-  const [mode, setMode] = useState<'light' | 'dark'>('light')
-  const [main, setMain] = useState<keyof ColorPaletteMap>('indigo')
+  const { state, actions } = useSettings()
 
   const nextTheme: Theme = useMemo(() => ({
     ...theme,
     colors: {
       ...theme.colors,
-      mode,
-      main: theme.colors.palette[main]
+      mode: state.darkMode ? 'dark' : 'light',
+      main: theme.colors.palette[state.color]
     },
     typography: {
       ...theme.typography,
       fontFamily: '"Signika", sans-serif'
     }
-  }), [mode, main])
+  }), [state.color, state.darkMode])
 
   const toggleMode = () => {
-    setMode(mode === 'light' ? 'dark' : 'light')
+    actions.setDarkMode(!state.darkMode)
   }
 
   const toggleColor = (color: keyof ColorPaletteMap) => {
-    setMain(color)
+    actions.setThemeColor(color)
   }
 
   return (
