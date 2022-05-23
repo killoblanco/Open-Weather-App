@@ -35,7 +35,7 @@ const thumb = (deg: number) => (theme: Theme): any => ({
   display: 'flex',
   flexDirection: 'column',
   gridArea: 'content',
-  height: '110%',
+  height: '105%',
   justifyContent: 'space-between',
   transform: `rotate(${deg + 225}deg)`,
   transition: `all ${theme.transitions.duration.normal} ${theme.transitions.timing}`,
