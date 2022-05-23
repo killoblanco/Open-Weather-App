@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, useReducer } from 'react'
+import { createContext, PropsWithChildren, useContext, useReducer } from 'react'
 import { dialogsDuck, dialogsInitialState } from './dialogs'
 
 interface Ctx {
@@ -43,4 +43,9 @@ export const ScaffoldCtxProvider = ({ children }: PropsWithChildren<unknown>) =>
       {children}
     </ScaffoldCtx.Provider>
   )
+}
+
+export const useDialogs = () => {
+  const { dialogs } = useContext(ScaffoldCtx)
+  return dialogs
 }
