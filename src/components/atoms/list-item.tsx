@@ -20,6 +20,7 @@ const styles = {
       borderBottom: `1px solid ${theme.colors.main[theme.colors.mode].outline}44`
     }
   }),
+  title: { textTransform: 'capitalize' } as CSSProperties,
   text: {
     display: 'flex',
     flex: 1,
@@ -32,7 +33,7 @@ function ListItem({ icon, onClick, subtitle, title, trailing }: ListItemProps) {
     <Box onClick={onClick} role="presentation" sx={styles.root}>
       {icon}
       <Box sx={styles.text}>
-        <Text variant="subtitle1">{title}</Text>
+        <Text variant="subtitle1" sx={styles.title}>{title}</Text>
         {subtitle ? <Text variant="subtitle2">{subtitle}</Text> : null}
       </Box>
       {trailing}
