@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "red": "Červené",
+    "pink": "růžový",
+    "purple": "nachový",
+    "deep_purple": "sytě fialová",
+    "indigo": "indigo",
+    "blue": "modrý",
+    "light_blue": "Světle modrá",
+    "cyan": "tyrkysová",
+    "teal": "modrozelená",
+    "green": "zelená",
+    "light_green": "světle zelená",
+    "lime": "Limetka",
+    "yellow": "žlutá",
+    "amber": "jantar",
+    "orange": "oranžový",
+    "deep_orange": "sytě oranžová"
+  },
+  "compass": {
+    "north": "S",
+    "east": "V",
+    "south": "J",
+    "west": "Z"
+  },
+  "settings": {
+    "settings": "nastavení",
+    "color": "barva",
+    "modeLight": "světelný režim",
+    "modeDark": "tmavý režim",
+    "tempUnit": "jednotka teploty",
+    "measUnit": "měřící jednotka",
+    "lang": "Jazyk"
+  },
+  "weather": {
+    "uv": "uv index",
+    "sunrise": "svítání",
+    "sunset": "západ slunce",
+    "wind": "vítr",
+    "precip": "srážky",
+    "feelsLike": "pocit",
+    "humidity": "vlhkost vzduchu",
+    "visibility": "viditelnost",
+    "pressure": "Tlak"
+  }
+}
