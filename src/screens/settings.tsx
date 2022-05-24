@@ -74,7 +74,7 @@ function SettingsScreen() {
         />
         <ListItem
           icon={<TranslateTwoTone />}
-          onClick={() => dialogs.actions.open({ title: 'lang', content: 'lang' })}
+          onClick={() => dialogs.actions.open({ title: t('settings.lang'), content: 'lang' })}
           title={t('settings.lang')}
         />
       </Box>
