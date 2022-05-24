@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { locationsActions } from '../duck/locations'
+import { AppDispatch } from '../duck/store'
 
 export const useGeo = () => {
-  const [geo, setGeo] = useState<GeolocationPosition | null>()
+  const dispatch = useDispatch<AppDispatch>()
+
+  const handleGeo = (position: GeolocationPosition) => dispatch(
+    locationsActions.setGeo(`${position.coords.latitude},${position.coords.longitude}`)
+  )
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
-      (position) => setGeo(position),
+      handleGeo,
       null,
       { enableHighAccuracy: true }
     )
   }, [])
-
-  return geo
 }
