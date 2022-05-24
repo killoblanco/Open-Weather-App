@@ -36,6 +36,10 @@
     "pl": "Polnisch",
     "pt": "Portugiesisch"
   },
+  "location": {
+    "newLocation": "Neuen Ort",
+    "fieldLabel": "Suche nach einem Ort"
+  },
   "settings": {
     "settings": "Einstellungen",
     "color": "Farbe",
