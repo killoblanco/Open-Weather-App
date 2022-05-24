@@ -4,7 +4,7 @@ import { BoxProps } from './box'
 interface IconBtnProps extends BoxProps {
 }
 
-export const IconBtn = styled.button<IconBtnProps>(({ theme, sx }) => ({
+export const IconBtn = styled.button<IconBtnProps & any>(({ theme, sx }) => ({
   backgroundColor: 'transparent',
   borderRadius: '50%',
   border: 'none',
