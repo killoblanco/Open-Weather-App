@@ -62,8 +62,13 @@ function SettingsScreen() {
         />
         <ListItem
           icon={<ThermostatTwoTone />}
-          onClick={() => dialogs.actions.open({ title: 'temp unit', content: 'temp unit' })}
+          onClick={() => settings.actions.setDegMeasure(settings.state.degMeasure === 'f' ? 'c' : 'f')}
           title={t('settings.tempUnit')}
+          trailing={(
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Text variant="h5">{settings.state.degMeasure.toUpperCase()} º</Text>
+            </Box>
+          )}
         />
         <ListItem
           icon={<SquareFootTwoTone />}
