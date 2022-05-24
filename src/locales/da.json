@@ -36,6 +36,10 @@
     "pl": "polsk",
     "pt": "portugisisk"
   },
+  "location": {
+    "newLocation": "Ny placering",
+    "fieldLabel": "Søg efter et sted"
+  },
   "settings": {
     "settings": "indstillinger",
     "color": "farve",
