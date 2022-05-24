@@ -13,6 +13,7 @@ interface ListItemProps {
 
 const styles = {
   root: (theme: Theme): any => ({
+    cursor: 'pointer',
     display: 'flex',
     gap: theme.spacing(2),
     padding: theme.spacing(2, 0),
