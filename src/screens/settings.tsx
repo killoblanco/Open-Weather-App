@@ -71,11 +71,6 @@ function SettingsScreen() {
           )}
         />
         <ListItem
-          icon={<SquareFootTwoTone />}
-          onClick={() => dialogs.actions.open({ title: 'temp unit', content: 'temp unit' })}
-          title={t('settings.measUnit')}
-        />
-        <ListItem
           icon={<TranslateTwoTone />}
           onClick={() => dialogs.actions.open({ title: t('settings.lang'), content: 'lang' })}
           title={t('settings.lang')}
