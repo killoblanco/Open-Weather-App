@@ -1,12 +1,11 @@
 import { ChevronLeftTwoTone } from '@mui/icons-material'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { routes } from '../../screens/router'
 import { IconBtn } from '../atoms/icon-btn'
 
 function BackBtn() {
-  const navigate = useNavigate()
-
   return (
-    <IconBtn onClick={() => navigate(-1)}>
+    <IconBtn as={Link} to={routes.main()}>
       <ChevronLeftTwoTone />
     </IconBtn>
   )
