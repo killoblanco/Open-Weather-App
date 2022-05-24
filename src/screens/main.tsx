@@ -1,12 +1,23 @@
+import { nanoid } from '@reduxjs/toolkit'
 import LocationWeatherLayout from '../components/layout/location-weather'
+import Slider from '../components/layout/slider'
 import { useGeo } from '../hooks/use-geo'
+import { useLocations } from '../hooks/use-locations'
 
 function MainScreen() {
-  const geo = useGeo()
-  const location = geo ? `${geo.coords.latitude},${geo.coords.longitude}` : 'auto:ip'
+  useGeo()
+
+  const { state } = useLocations()
+
 
   return (
-    <LocationWeatherLayout location={location} />
+    <Slider
+      slides={[
+        <LocationWeatherLayout key={nanoid()} location={state.geo} />,
+        <LocationWeatherLayout key={nanoid()} location={state.geo} />,
+        <LocationWeatherLayout key={nanoid()} location={state.geo} />
+      ]}
+    />
   )
 }
 
