@@ -1,10 +1,11 @@
 import { Theme } from '@emotion/react'
 import styled from '@emotion/styled'
 import { motion } from 'framer-motion'
-import { CSSProperties } from 'react'
+import { CSSProperties, ElementType } from 'react'
 
 export interface BoxProps {
   sx?: CSSProperties | ((theme: Theme) => CSSProperties)
+  as?: ElementType
 }
 
 export const Box = styled(motion.div)<BoxProps>(({
