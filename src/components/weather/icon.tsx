@@ -13,8 +13,8 @@ const codes = {
     'snow': [1219, 1222, 1225, 1258, 1264],
     'snow-flurries': [1066, 1210, 1213, 1216, 322],
     'sunny': [1000],
-    'thunderstorms-2': [1246, 1276, 1282],
-    'thunderstorm-sunny': [1087, 1243, 1273, 1279],
+    'thunderstroms-2': [1246, 1276, 1282],
+    'thunderstroms-sunny': [1087, 1243, 1273, 1279],
     'windy': [1114, 1117]
   },
   night: {
@@ -28,8 +28,8 @@ const codes = {
     'snow': [1219, 1222, 1225, 1258, 1264],
     'snow-flurries': [1066, 1210, 1213, 1216, 322],
     'night': [1000],
-    'thunderstorms-2': [1246, 1276, 1282],
-    'thunderstorm-sunny-night': [1087, 1243, 1273, 1279],
+    'thunderstroms-2': [1246, 1276, 1282],
+    'thunderstroms-sunny-night': [1087, 1243, 1273, 1279],
     'windy': [1114, 1117]
   }
 }
