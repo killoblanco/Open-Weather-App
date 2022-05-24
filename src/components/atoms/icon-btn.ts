@@ -10,7 +10,6 @@ export const IconBtn = styled.button<IconBtnProps>(({ theme, sx }) => ({
   border: 'none',
   cursor: 'pointer',
   display: 'flex',
-  padding: theme.spacing(0.5),
   ...(sx ? (typeof sx === 'function' ? sx(theme) : sx) : {}),
   '&:hover, &:active, &:focus': { backgroundColor: 'transparent' },
   '& svg': { fontSize: theme.spacing(4) }
