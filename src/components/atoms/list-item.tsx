@@ -4,7 +4,7 @@ import { Box } from './box'
 import { Text } from './text'
 
 interface ListItemProps {
-  icon: JSX.Element;
+  icon?: JSX.Element;
   onClick?: () => void;
   subtitle?: string;
   title: string;
