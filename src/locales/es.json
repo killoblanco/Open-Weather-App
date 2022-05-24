@@ -23,6 +23,19 @@
     "south": "S",
     "west": "O"
   },
+  "locales": {
+    "cs": "checo",
+    "da": "danés",
+    "de": "alemán",
+    "en": "inglés",
+    "es": "español",
+    "fi": "finlandés",
+    "fr": "francés",
+    "it": "italiano",
+    "nl": "holandés",
+    "pl": "polaco",
+    "pt": "portugués"
+  },
   "settings": {
     "settings": "ajustes",
     "color": "color",
