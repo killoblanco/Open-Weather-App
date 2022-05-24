@@ -9,13 +9,11 @@ function MainScreen() {
 
   const { state } = useLocations()
 
-
   return (
     <Slider
       slides={[
         <LocationWeatherLayout key={nanoid()} location={state.geo} />,
-        <LocationWeatherLayout key={nanoid()} location={state.geo} />,
-        <LocationWeatherLayout key={nanoid()} location={state.geo} />
+        ...state.list.map(location => (<LocationWeatherLayout key={nanoid()} location={location} />))
       ]}
     />
   )
