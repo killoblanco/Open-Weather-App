@@ -18,8 +18,9 @@ const styles = {
     maxWidth: theme.spacing(60),
     maxHeight: '50vh',
     overflow: 'hidden',
-    padding: theme.spacing(2),
-    width: '100%'
+    padding: theme.spacing(2,3),
+    transition: `all ${theme.transitions.duration.normal} ${theme.transitions.timing}`,
+    width: '72%'
   }),
   title: (theme: Theme): CSSProperties => ({
     display: 'flex',
