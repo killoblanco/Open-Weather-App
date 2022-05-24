@@ -9,9 +9,8 @@ const styles = {
   root: (theme: Theme): CSSProperties => ({
     display: 'flex',
     gap: theme.spacing(1),
-    maxWidth: theme.spacing(70),
+    width: '100%',
     overflow: 'auto',
-    padding: theme.spacing(0, 2)
   }),
   item: (theme: Theme): any => ({
     alignItems: 'center',
@@ -19,8 +18,6 @@ const styles = {
     flexDirection: 'column',
     gap: theme.spacing(0.5),
     justifyContent: 'center',
-    '&:first-of-type': { marginLeft: theme.spacing(2) },
-    '&:last-of-type': { marginRight: theme.spacing(2) }
   })
 }
 
