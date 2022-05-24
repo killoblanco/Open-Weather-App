@@ -24,9 +24,10 @@ const styles = {
   title: { textTransform: 'capitalize' } as CSSProperties,
   text: {
     display: 'flex',
+    flexDirection: 'column',
     flex: 1,
     gap: 0
-  }
+  } as CSSProperties
 }
 
 function ListItem({ icon, onClick, subtitle, title, trailing }: ListItemProps) {
