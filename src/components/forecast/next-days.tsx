@@ -35,7 +35,11 @@ const styles = {
 }
 
 function ForecastNextDays({ forecast }: { forecast: WeatherApiState['forecast'] }) {
-  const { state: { lang } } = useSettings()
+  const { state: { degMeasure, lang } } = useSettings()
+
+  const minTemp = (day: any): number => degMeasure === 'c' ? day.mintempC : day.mintempF
+  const maxTemp = (day: any): number => degMeasure === 'c' ? day.maxtempC : day.maxtempF
+
   return (
     <Box sx={styles.root}>
       {forecast.map(day => (
@@ -44,10 +48,10 @@ function ForecastNextDays({ forecast }: { forecast: WeatherApiState['forecast'] 
           <img src={day.day.condition.icon} alt={day.day.condition.text} />
           <Box sx={styles.temp}>
             <AcUnitTwoTone fontSize="small" />
-            <Text variant="subtitle2">{day.day.mintempC}º</Text>
+            <Text variant="subtitle2">{minTemp(day.day)}º</Text>
           </Box>
           <Box sx={styles.temp}>
-            <Text variant="subtitle2">{day.day.maxtempC}º</Text>
+            <Text variant="subtitle2">{maxTemp(day.day)}º</Text>
             <LocalFireDepartmentTwoTone fontSize="small" />
           </Box>
         </Box>
