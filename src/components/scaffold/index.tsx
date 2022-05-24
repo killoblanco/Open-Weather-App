@@ -9,7 +9,10 @@ import { Dialogs } from './dialogs'
 const styles = {
   root: (theme: Theme): CSSProperties => ({
     margin: '0 auto',
-    padding: theme.spacing(2)
+    padding: theme.spacing(2, 2, 4),
+    width: `calc(100vw - ${theme.spacing(4)})`,
+    height: `calc(100vh - ${theme.spacing(4)})`,
+    overflow: 'hidden'
   })
 }
 
