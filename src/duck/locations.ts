@@ -16,7 +16,7 @@ const locationsSlice = createSlice({
       state.geo = action.payload
     },
     addLocation: (state, action) => {
-      state.list.push(action.payload)
+      state.list = Array.from(new Set([...state.list, action.payload]))
     },
     removeLocation: (state, action) => {
       state.list = state.list.filter(location => location !== action.payload)
