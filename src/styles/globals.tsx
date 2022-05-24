@@ -10,11 +10,11 @@ function GlobalStyles() {
 
   const styles: any = {
     ':root': {
-      fontFamily: theme.typography.fontFamily,
       fontSize: theme.spacing(2),
       color: theme.colors.main[theme.colors.mode].onBackground
     },
     '*': {
+      fontFamily: theme.typography.fontFamily,
       margin: 0,
       padding: 0,
       scrollBehavior: 'smooth',
