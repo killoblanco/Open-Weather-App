@@ -14,7 +14,6 @@ import ListItem from '../components/atoms/list-item'
 import { Text } from '../components/atoms/text'
 import BackBtn from '../components/buttons/back-btn'
 import { useDialogs } from '../components/scaffold/context'
-import ColorSwitch from '../components/settings/color-switch'
 import { useSettings } from '../hooks/use-settings'
 import { useThemeCtx } from '../styles/provider'
 
@@ -51,10 +50,9 @@ function SettingsScreen() {
         </Text>
       </Box>
       <Box>
-        <ColorSwitch />
         <ListItem
           icon={<PaletteTwoTone />}
-          onClick={() => dialogs.actions.open({ title: 'color', content: 'color' })}
+          onClick={() => dialogs.actions.open({ title: t('settings.color'), content: 'colors' })}
           title={t('settings.color')}
         />
         <ListItem
