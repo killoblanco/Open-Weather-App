@@ -23,6 +23,19 @@
     "south": "E",
     "west": "I"
   },
+  "locales": {
+    "cs": "Tšekki",
+    "da": "Tanskan kieli",
+    "de": "Saksan kieli",
+    "en": "Englanti",
+    "es": "Espanja",
+    "fi": "Suomalainen",
+    "fr": "Ranskan kieli",
+    "it": "italialainen",
+    "nl": "Hollannin kieli",
+    "pl": "Kiillottaa",
+    "pt": "Portugalin kieli"
+  },
   "settings": {
     "settings": "asetukset",
     "color": "väri",
