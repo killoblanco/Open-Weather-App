@@ -36,6 +36,10 @@
     "pl": "Kiillottaa",
     "pt": "Portugalin kieli"
   },
+  "location": {
+    "newLocation": "Uusi sijainti",
+    "fieldLabel": "Etsi paikka"
+  },
   "settings": {
     "settings": "asetukset",
     "color": "väri",
