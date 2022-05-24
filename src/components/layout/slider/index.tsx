@@ -1,5 +1,7 @@
 import { AddLocationTwoTone, ChevronLeftTwoTone, ChevronRightTwoTone, MyLocationTwoTone } from '@mui/icons-material'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { routes } from '../../../screens/router'
 import { Box } from '../../atoms/box'
 import { IconBtn } from '../../atoms/icon-btn'
 import { styles } from './styles'
@@ -25,16 +27,16 @@ function Slider({ slides }: { slides: JSX.Element[] }) {
         {slides[cur]}
       </Box>
       <Box sx={styles.dots}>
-        <IconBtn onClick={() => goTo(0)}>
+        {!isFirst ? (<IconBtn onClick={() => goTo(0)}>
           <MyLocationTwoTone />
-        </IconBtn>
-        {!isFirst ? (<IconBtn onClick={goPrev}>
+        </IconBtn>) : null}
+        {(cur > 1) ? (<IconBtn onClick={goPrev}>
           <ChevronLeftTwoTone />
         </IconBtn>) : null}
         {!isLast ? (<IconBtn onClick={goNext}>
           <ChevronRightTwoTone />
         </IconBtn>) : null}
-        <IconBtn>
+        <IconBtn as={Link} to={routes.newLocation()}>
           <AddLocationTwoTone />
         </IconBtn>
       </Box>
