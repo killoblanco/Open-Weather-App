@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm i -g firebase-tools
       - run: npm ci && npm run build
-      - run: firebase use --add killoblanco-119f3 target:apply hosting open-weather open-weather
+      - run: firebase use --add killoblanco-119f3
+      - run: firebase target:apply hosting open-weather open-weather
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

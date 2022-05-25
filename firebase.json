@@ -1,12 +1,12 @@
 {
   "hosting": {
+    "target": "open-weather",
     "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "target": "open-weather",
     "rewrites": [
       {
         "source": "**",
