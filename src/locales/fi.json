@@ -38,7 +38,9 @@
   },
   "location": {
     "newLocation": "Uusi sijainti",
-    "fieldLabel": "Etsi paikka"
+    "fieldLabel": "Etsi paikka",
+    "list": "Sijainnit",
+    "current": "Tämänhetkinen olinpaikka"
   },
   "settings": {
     "settings": "asetukset",
