@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "Het spijt ons, we konden niet vinden wat u zocht",
+    "back": "ga terug"
+  },
   "colors": {
     "red": "rood",
     "pink": "roze",
