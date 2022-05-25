@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "Je nám líto, nenašli jsme, co jste hledali",
+    "back": "jít zpět"
+  },
   "colors": {
     "red": "Červené",
     "pink": "růžový",
