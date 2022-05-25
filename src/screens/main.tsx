@@ -1,4 +1,5 @@
 import { nanoid } from '@reduxjs/toolkit'
+import { useMemo } from 'react'
 import LocationWeatherLayout from '../components/layout/location-weather'
 import Slider from '../components/layout/slider'
 import { useGeo } from '../hooks/use-geo'
@@ -9,13 +10,15 @@ function MainScreen() {
 
   const { state } = useLocations()
 
+  const slides = useMemo(() => ({
+    [state.geo]: <LocationWeatherLayout key={nanoid()} location={state.geo} />,
+    ...state.list
+      .map(location => ({ [location]: <LocationWeatherLayout key={nanoid()} location={location} /> }))
+      .reduce((acc, cur) => ({ ...acc, ...cur }), {})
+  }), [state.geo, state.list])
+
   return (
-    <Slider
-      slides={[
-        <LocationWeatherLayout key={nanoid()} location={state.geo} />,
-        ...state.list.map(location => (<LocationWeatherLayout key={nanoid()} location={location} />))
-      ]}
-    />
+    <Slider slides={slides} />
   )
 }
 
