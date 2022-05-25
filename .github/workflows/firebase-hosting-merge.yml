@@ -19,4 +19,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_KILLOBLANCO_119F3 }}'
           channelId: live
-          projectId: open-weather
+          target: open-weather
+          projectId: killoblanco-119f3
