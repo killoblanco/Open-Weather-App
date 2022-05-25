@@ -19,7 +19,7 @@ The app uses [Rapid API] to retrieve weather information from weatherapi.com.
   - Atmospheric pressure
 - Search for a location by name
 - App Customization:
-  - Up to 16 color variations including dark mode
+  - Up to 16 color schemes including dark modes
   - Customizable temperature units
   - Translated to 11 languages including:
     - Czech, Danish, Dutch, English, Finnish, French, German, Italian, Polish,
