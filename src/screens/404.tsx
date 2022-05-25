@@ -26,7 +26,7 @@ const styles = {
     overflow: 'hidden',
     position: 'relative'
   }),
-  text: { maxWidth: '72%', textAlign: 'center' }
+  text: { maxWidth: '72%', textAlign: 'center' } as CSSProperties
 }
 
 const Btn = styled(Link)(({ theme }) => ({

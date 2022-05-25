@@ -44,7 +44,7 @@ function ForecastNextDays({ forecast }: { forecast: WeatherApiState['forecast'] 
     <Box sx={styles.root}>
       {forecast.map(day => (
         <Box sx={styles.row} key={nanoid((6))}>
-          <Text variant="subtitle1" sx={styles.title}>{parseRelativeTime(day.date, lang)}</Text>
+          <Text variant="subtitle1" sx={styles.title}>{parseRelativeTime(day.date)}</Text>
           <img src={day.day.condition.icon} alt={day.day.condition.text} />
           <Box sx={styles.temp}>
             <AcUnitTwoTone fontSize="small" />
