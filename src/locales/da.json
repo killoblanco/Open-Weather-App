@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "Vi beklager, men vi kunne ikke finde det, du ledte efter",
+    "back": "gå tilbage"
+  },
   "colors": {
     "red": "rød",
     "pink": "lyserød",
