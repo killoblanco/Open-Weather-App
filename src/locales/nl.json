@@ -38,7 +38,9 @@
   },
   "location": {
     "newLocation": "Nieuwe locatie",
-    "fieldLabel": "Zoek een plaats"
+    "fieldLabel": "Zoek een plaats",
+    "list": "Locaties",
+    "current": "Huidige locatie"
   },
   "settings": {
     "settings": "instellingen",
