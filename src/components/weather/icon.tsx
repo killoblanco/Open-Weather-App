@@ -39,6 +39,19 @@ const Img = styled.img(({ theme }) => ({
   maxWidth: theme.spacing(16)
 }))
 
+export const getIconPath = (code: number, isDay: boolean) => {
+  let icon = 'sunny'
+
+  Object.entries(codes[isDay ? 'day' : 'night'])
+    .forEach(([key, value]) => {
+      if (value.includes(code)) icon = key
+    })
+
+  return import(`../../assets/${icon}.png`)
+    .then(({ default: src }) => src)
+    .catch(() => import(`../../assets/sunny.png`))
+}
+
 function WeatherIcon({ code, isDay }: { code: number, isDay: boolean }) {
   const [path, setPath] = useState('')
 
