@@ -1,25 +1,25 @@
-import { AddLocationTwoTone, ChevronLeftTwoTone, ChevronRightTwoTone, MyLocationTwoTone } from '@mui/icons-material'
-import { useState } from 'react'
+import { AddLocationTwoTone, MenuTwoTone } from '@mui/icons-material'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { routes } from '../../../screens/router'
 import { Box } from '../../atoms/box'
 import { IconBtn } from '../../atoms/icon-btn'
+import { useDialogs } from '../../scaffold/context'
 import { styles } from './styles'
 
-function Slider({ slides }: { slides: JSX.Element[] }) {
-  const [cur, setCur] = useState(0)
+function Slider({ slides }: { slides: { [p: string]: JSX.Element } }) {
+  const { t } = useTranslation()
+  const { actions } = useDialogs()
+  const [cur, setCur] = useState(Object.keys(slides)[0])
 
-  const isFirst = cur === 0
-  const isLast = cur === slides.length - 1
+  useEffect(() => {
+    setCur(Object.keys(slides)[0])
+  }, [slides])
 
-  const goTo = (i: number) => setCur(i)
+  console.log({ cur, slides })
 
-  const goNext = () => {
-    if (!isLast) goTo(cur + 1)
-  }
-  const goPrev = () => {
-    if (!isFirst) goTo(cur - 1)
-  }
+  const goTo = (location: string) => setCur(location)
 
   return (
     <Box sx={styles.root}>
@@ -27,15 +27,15 @@ function Slider({ slides }: { slides: JSX.Element[] }) {
         {slides[cur]}
       </Box>
       <Box sx={styles.dots}>
-        {!isFirst ? (<IconBtn onClick={() => goTo(0)}>
-          <MyLocationTwoTone />
-        </IconBtn>) : null}
-        {(cur > 1) ? (<IconBtn onClick={goPrev}>
-          <ChevronLeftTwoTone />
-        </IconBtn>) : null}
-        {!isLast ? (<IconBtn onClick={goNext}>
-          <ChevronRightTwoTone />
-        </IconBtn>) : null}
+        <IconBtn
+          onClick={() => actions.open({
+            title: t('location.list'),
+            content: 'locations-list',
+            props: { onClick: goTo }
+          })}
+        >
+          <MenuTwoTone />
+        </IconBtn>
         <IconBtn as={Link} to={routes.newLocation()}>
           <AddLocationTwoTone />
         </IconBtn>
