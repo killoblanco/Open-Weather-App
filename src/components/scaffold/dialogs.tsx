@@ -9,7 +9,7 @@ import { ScaffoldCtx } from './context'
 import { dialogsInitialState } from './context/dialogs'
 
 const styles = {
-  root: (theme: Theme): CSSProperties => ({
+  root: (theme: Theme): any => ({
     backgroundColor: theme.colors.main[theme.colors.mode].secondaryContainer,
     borderRadius: theme.borderRadius,
     display: 'flex',
@@ -20,11 +20,13 @@ const styles = {
     overflow: 'hidden',
     padding: theme.spacing(2,3),
     transition: `all ${theme.transitions.duration.normal} ${theme.transitions.timing}`,
-    width: '72%'
+    width: '72%',
   }),
-  title: (theme: Theme): CSSProperties => ({
+  title: (theme: Theme): any => ({
+    alignItems: 'center',
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    '& svg': { width: theme.spacing(3) }
   })
 }
 
