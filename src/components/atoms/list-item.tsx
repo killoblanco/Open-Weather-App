@@ -15,11 +15,13 @@ const styles = {
   root: (theme: Theme): any => ({
     cursor: 'pointer',
     display: 'flex',
+    alignItems: 'center',
     gap: theme.spacing(2),
     padding: theme.spacing(2, 0),
     '&:not(:last-of-type)': {
       borderBottom: `1px solid ${theme.colors.main[theme.colors.mode].outline}44`
-    }
+    },
+    '& svg': { width: theme.spacing(3) }
   }),
   title: { textTransform: 'capitalize' } as CSSProperties,
   text: {
