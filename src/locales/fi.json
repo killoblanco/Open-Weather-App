@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "Olemme pahoillamme, emme löytäneet etsimääsi",
+    "back": "mene takaisin"
+  },
   "colors": {
     "red": "punainen",
     "pink": "vaaleanpunainen",
