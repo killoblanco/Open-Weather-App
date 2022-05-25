@@ -8,7 +8,7 @@ export interface TextProps extends BoxProps {
 }
 
 export const Text = (
-  { variant, as, children, sx, ...props }: PropsWithChildren<HTMLProps<any> & TextProps>
+  { variant, as, children, sx, ...props }: PropsWithChildren<TextProps & any>
 ) => createElement(
   styled((as || 'p') as any)(({ theme }) => ({
     ...theme.typography.styles[variant || 'body1'],
