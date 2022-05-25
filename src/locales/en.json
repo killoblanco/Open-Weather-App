@@ -38,7 +38,9 @@
   },
   "location": {
     "newLocation": "New location",
-    "fieldLabel": "Search for a place"
+    "fieldLabel": "Search for a place",
+    "list": "Locations",
+    "current": "Current location"
   },
   "settings": {
     "settings": "settings",
