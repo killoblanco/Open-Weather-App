@@ -26,7 +26,7 @@ function LocationsListDialog() {
   }
 
   const locations = state.list.map((loc) => ({ value: loc, label: loc }))
-  locations.unshift({ value: state.geo, label: t('locations.current') })
+  locations.unshift({ value: state.geo, label: t('location.current') })
 
   return (
     <Box sx={styles.root}>
