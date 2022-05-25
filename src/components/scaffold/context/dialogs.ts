@@ -3,7 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export const dialogsInitialState = {
   open: false,
   title: '',
-  content: ''
+  content: '',
+  props: {} as any,
 }
 
 export const dialogsDuck = createSlice({
@@ -14,6 +15,7 @@ export const dialogsDuck = createSlice({
       state.open = true
       state.title = action.payload.title!
       state.content = action.payload.content!
+      state.props = action.payload.props || {}
     },
     closeDialog: () => dialogsInitialState
   }
