@@ -38,7 +38,9 @@
   },
   "location": {
     "newLocation": "Nuova posizione",
-    "fieldLabel": "Cerca un luogo"
+    "fieldLabel": "Cerca un luogo",
+    "list": "Posizioni",
+    "current": "Posizione attuale"
   },
   "settings": {
     "settings": "impostazioni",
