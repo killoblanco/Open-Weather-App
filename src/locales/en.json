@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "We're sorry, we couldn't find what you were looking for",
+    "back": "go back"
+  },
   "colors": {
     "red": "red",
     "pink": "pink",
