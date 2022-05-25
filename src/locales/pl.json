@@ -1,4 +1,8 @@
 {
+  "404": {
+    "label": "Przepraszamy, nie mogliśmy znaleźć tego, czego szukałeś",
+    "back": "Wróć"
+  },
   "colors": {
     "red": "czerwony",
     "pink": "różowy",
