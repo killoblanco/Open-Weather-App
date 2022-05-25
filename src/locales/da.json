@@ -38,7 +38,9 @@
   },
   "location": {
     "newLocation": "Ny placering",
-    "fieldLabel": "Søg efter et sted"
+    "fieldLabel": "Søg efter et sted",
+    "list": "Placeringer",
+    "current": "Nuværende placering"
   },
   "settings": {
     "settings": "indstillinger",
