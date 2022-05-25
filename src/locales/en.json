@@ -1,0 +1,69 @@
+{
+  "404": {
+    "label": "We're sorry, we couldn't find what you were looking for",
+    "back": "go back"
+  },
+  "colors": {
+    "red": "red",
+    "pink": "pink",
+    "purple": "purple",
+    "deep_purple": "deep purple",
+    "indigo": "indigo",
+    "blue": "blue",
+    "light_blue": "light blue",
+    "cyan": "cyan",
+    "teal": "teal",
+    "green": "green",
+    "light_green": "light green",
+    "lime": "lime",
+    "yellow": "yellow",
+    "amber": "amber",
+    "orange": "orange",
+    "deep_orange": "deep orange"
+  },
+  "compass": {
+    "north": "N",
+    "east": "E",
+    "south": "S",
+    "west": "W"
+  },
+  "locales": {
+    "cs": "Czech",
+    "da": "Danish",
+    "de": "German",
+    "en": "English",
+    "es": "Spanish",
+    "fi": "Finnish",
+    "fr": "French",
+    "it": "Italian",
+    "nl": "Dutch",
+    "pl": "Polish",
+    "pt": "Portuguese"
+  },
+  "location": {
+    "newLocation": "New location",
+    "fieldLabel": "Search for a place",
+    "list": "Locations",
+    "current": "Current location"
+  },
+  "settings": {
+    "settings": "settings",
+    "color": "color",
+    "modeLight": "light mode",
+    "modeDark": "dark mode",
+    "tempUnit": "temperature unit",
+    "measUnit": "measurement unit",
+    "lang": "language"
+  },
+  "weather": {
+    "uv": "uv index",
+    "sunrise": "sunrise",
+    "sunset": "sunset",
+    "wind": "wind",
+    "precip": "precipitation",
+    "feelsLike": "feels like",
+    "humidity": "humidity",
+    "visibility": "visibility",
+    "pressure": "pressure"
+  }
+}

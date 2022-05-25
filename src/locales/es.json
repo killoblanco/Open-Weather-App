@@ -1,0 +1,69 @@
+{
+  "404": {
+    "label": "Lo sentimos, no pudimos encontrar lo que estabas buscando",
+    "back": "regresar"
+  },
+  "colors": {
+    "red": "rojo",
+    "pink": "rosado",
+    "purple": "morado",
+    "deep_purple": "morado oscuro",
+    "indigo": "índigo",
+    "blue": "azul",
+    "light_blue": "azul claro",
+    "cyan": "azul cielo",
+    "teal": "verde azulado",
+    "green": "verde",
+    "light_green": "verde claro",
+    "lime": "lima",
+    "yellow": "amarillo",
+    "amber": "ámbar",
+    "orange": "naranja",
+    "deep_orange": "naranja oscuro"
+  },
+  "compass": {
+    "north": "N",
+    "east": "E",
+    "south": "S",
+    "west": "O"
+  },
+  "locales": {
+    "cs": "checo",
+    "da": "danés",
+    "de": "alemán",
+    "en": "inglés",
+    "es": "español",
+    "fi": "finlandés",
+    "fr": "francés",
+    "it": "italiano",
+    "nl": "holandés",
+    "pl": "polaco",
+    "pt": "portugués"
+  },
+  "location": {
+    "newLocation": "Nueva ubicación",
+    "fieldLabel": "Buscar un lugar",
+    "list": "Ubicaciones",
+    "current": "Ubicación actual"
+  },
+  "settings": {
+    "settings": "ajustes",
+    "color": "color",
+    "modeLight": "modo claro",
+    "modeDark": "modo oscuro",
+    "tempUnit": "unidad de temperatura",
+    "measUnit": "unidad de medida",
+    "lang": "idioma"
+  },
+  "weather": {
+    "uv": "índice uv",
+    "sunrise": "amanecer",
+    "sunset": "puesta de sol",
+    "wind": "viento",
+    "precip": "precipitación",
+    "feelsLike": "sensación",
+    "humidity": "humedad",
+    "visibility": "visibilidad",
+    "pressure": "presión"
+  }
+}

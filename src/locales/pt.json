@@ -1,0 +1,69 @@
+{
+  "404": {
+    "label": "Desculpe, não conseguimos encontrar o que você estava procurando",
+    "back": "voltar"
+  },
+  "colors": {
+    "red": "vermelho",
+    "pink": "rosa",
+    "purple": "roxa",
+    "deep_purple": "roxo escuro",
+    "indigo": "índigo",
+    "blue": "azul",
+    "light_blue": "Azul claro",
+    "cyan": "ciano",
+    "teal": "cerceta",
+    "green": "verde",
+    "light_green": "verde claro",
+    "lime": "Lima",
+    "yellow": "amarelo",
+    "amber": "âmbar",
+    "orange": "laranja",
+    "deep_orange": "laranja escuro"
+  },
+  "compass": {
+    "north": "N",
+    "east": "L",
+    "south": "S",
+    "west": "O"
+  },
+  "locales": {
+    "cs": "tcheco",
+    "da": "dinamarquês",
+    "de": "alemão",
+    "en": "inglês",
+    "es": "espanhol",
+    "fi": "finlandês",
+    "fr": "francês",
+    "it": "italiano",
+    "nl": "holandês",
+    "pl": "polonês",
+    "pt": "português"
+  },
+  "location": {
+    "newLocation": "Nova localização",
+    "fieldLabel": "Pesquisar um lugar",
+    "list": "Localizações",
+    "current": "Localização atual"
+  },
+  "settings": {
+    "settings": "configurações",
+    "color": "cor",
+    "modeLight": "modo claro",
+    "modeDark": "modo escuro",
+    "tempUnit": "unidade de temperatura",
+    "measUnit": "unidade de medida",
+    "lang": "Língua"
+  },
+  "weather": {
+    "uv": "Índice UV",
+    "sunrise": "amanhecer",
+    "sunset": "pôr do sol",
+    "wind": "vento",
+    "precip": "precipitação",
+    "feelsLike": "sensação",
+    "humidity": "umidade",
+    "visibility": "visibilidade",
+    "pressure": "Pressão"
+  }
+}

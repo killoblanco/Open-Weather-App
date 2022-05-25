@@ -1,0 +1,69 @@
+{
+  "404": {
+    "label": "Het spijt ons, we konden niet vinden wat u zocht",
+    "back": "ga terug"
+  },
+  "colors": {
+    "red": "rood",
+    "pink": "roze",
+    "purple": "Purper",
+    "deep_purple": "donker paars",
+    "indigo": "indigo",
+    "blue": "blauw",
+    "light_blue": "Lichtblauw",
+    "cyan": "cyaan",
+    "teal": "blauwgroen",
+    "green": "groente",
+    "light_green": "licht groen",
+    "lime": "limoen",
+    "yellow": "geel",
+    "amber": "amber",
+    "orange": "oranje",
+    "deep_orange": "diep oranje"
+  },
+  "compass": {
+    "north": "N",
+    "east": "O",
+    "south": "Z",
+    "west": "W"
+  },
+  "locales": {
+    "cs": "Tsjechisch",
+    "da": "Deens",
+    "de": "Duits",
+    "en": "Engels",
+    "es": "Spaans",
+    "fi": "Fins",
+    "fr": "Frans",
+    "it": "Italiaans",
+    "nl": "Nederlands",
+    "pl": "Pools",
+    "pt": "Portugees"
+  },
+  "location": {
+    "newLocation": "Nieuwe locatie",
+    "fieldLabel": "Zoek een plaats",
+    "list": "Locaties",
+    "current": "Huidige locatie"
+  },
+  "settings": {
+    "settings": "instellingen",
+    "color": "kleur",
+    "modeLight": "licht modus",
+    "modeDark": "donkere modus",
+    "tempUnit": "temperatuureenheid",
+    "measUnit": "meeteenheid",
+    "lang": "taal"
+  },
+  "weather": {
+    "uv": "UV-index",
+    "sunrise": "zonsopkomst",
+    "sunset": "zonsondergang",
+    "wind": "wind",
+    "precip": "neerslag",
+    "feelsLike": "gevoel",
+    "humidity": "vochtigheid",
+    "visibility": "zichtbaarheid",
+    "pressure": "Druk"
+  }
+}

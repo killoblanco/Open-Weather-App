@@ -1,44 +1,25 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { StrictMode } from 'react'
+import { I18nextProvider } from 'react-i18next'
+import { Provider } from 'react-redux'
+import Scaffold from './components/scaffold'
+import { store } from './duck/store'
+import i18n from './locales'
+import Router from './screens/router'
+import StylesProvider from './styles/provider'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <StrictMode>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <StylesProvider>
+            <Scaffold>
+              <Router />
+            </Scaffold>
+          </StylesProvider>
+        </I18nextProvider>
+      </Provider>
+    </StrictMode>
   )
 }
 

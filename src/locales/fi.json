@@ -1,0 +1,69 @@
+{
+  "404": {
+    "label": "Olemme pahoillamme, emme löytäneet etsimääsi",
+    "back": "mene takaisin"
+  },
+  "colors": {
+    "red": "punainen",
+    "pink": "vaaleanpunainen",
+    "purple": "violetti",
+    "deep_purple": "syvä violetti",
+    "indigo": "indigo",
+    "blue": "sininen",
+    "light_blue": "Vaaleansininen",
+    "cyan": "syaani",
+    "teal": "sinivihreä",
+    "green": "vihreä",
+    "light_green": "vaaleanvihreä",
+    "lime": "lime",
+    "yellow": "keltainen",
+    "amber": "keltainen",
+    "orange": "oranssi",
+    "deep_orange": "syvä oranssi"
+  },
+  "compass": {
+    "north": "P",
+    "east": "I",
+    "south": "E",
+    "west": "I"
+  },
+  "locales": {
+    "cs": "Tšekki",
+    "da": "Tanskan kieli",
+    "de": "Saksan kieli",
+    "en": "Englanti",
+    "es": "Espanja",
+    "fi": "Suomalainen",
+    "fr": "Ranskan kieli",
+    "it": "italialainen",
+    "nl": "Hollannin kieli",
+    "pl": "Kiillottaa",
+    "pt": "Portugalin kieli"
+  },
+  "location": {
+    "newLocation": "Uusi sijainti",
+    "fieldLabel": "Etsi paikka",
+    "list": "Sijainnit",
+    "current": "Tämänhetkinen olinpaikka"
+  },
+  "settings": {
+    "settings": "asetukset",
+    "color": "väri",
+    "modeLight": "valotila",
+    "modeDark": "tumma tila",
+    "tempUnit": "lämpötilayksikkö",
+    "measUnit": "mittayksikkö",
+    "lang": "Kieli"
+  },
+  "weather": {
+    "uv": "UV-indeksi",
+    "sunrise": "auringonnousu",
+    "sunset": "auringonlasku",
+    "wind": "tuuli",
+    "precip": "sademäärä",
+    "feelsLike": "tunne",
+    "humidity": "kosteus",
+    "visibility": "näkyvyys",
+    "pressure": "Paine"
+  }
+}
