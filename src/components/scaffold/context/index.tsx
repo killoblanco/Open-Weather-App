@@ -16,7 +16,7 @@ export const ScaffoldCtx = createContext<Ctx>({
     actions: {
       close: function () {
       },
-      open: function ({ title, content }: Partial<typeof dialogsInitialState>) {
+      open: function ({ title, content, props }: Partial<typeof dialogsInitialState>) {
       }
     },
     state: dialogsInitialState
@@ -30,8 +30,8 @@ export const ScaffoldCtxProvider = ({ children }: PropsWithChildren<unknown>) =>
     dialogs: {
       state: dialogs,
       actions: {
-        open: ({ title, content }: Partial<typeof dialogsInitialState>) => dispatchDialogs(
-          dialogsDuck.actions.openDialog({ title, content })
+        open: ({ title, content, props }: Partial<typeof dialogsInitialState>) => dispatchDialogs(
+          dialogsDuck.actions.openDialog({ title, content, props })
         ),
         close: () => dispatchDialogs(dialogsDuck.actions.closeDialog())
       }
