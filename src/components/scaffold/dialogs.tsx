@@ -35,7 +35,7 @@ const DialogContent = (dialog: typeof dialogsInitialState) => {
 
   useEffect(() => {
     if (dialog.open && dialog.content) {
-      const content = lazy(() => import((`../dialogs/${dialog.content}`)))
+      const content = lazy(() => import((`../dialogs/${dialog.content}.tsx`)))
       if (content) {
         setContent(content)
       } else {
