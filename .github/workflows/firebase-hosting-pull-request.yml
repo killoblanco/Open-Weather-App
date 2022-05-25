@@ -14,7 +14,9 @@ jobs:
       VITE_RAPID_API_KEY: '${{ secrets.RAPID_API_KEY }}'
     steps:
       - uses: actions/checkout@v2
+      - run: npm i -g firebase-tools
       - run: npm ci && npm run build
+      - run: firebase target:apply hosting open-weather open-weather
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
