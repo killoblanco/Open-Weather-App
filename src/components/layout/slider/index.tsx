@@ -17,8 +17,6 @@ function Slider({ slides }: { slides: { [p: string]: JSX.Element } }) {
     setCur(Object.keys(slides)[0])
   }, [slides])
 
-  console.log({ cur, slides })
-
   const goTo = (location: string) => setCur(location)
 
   return (
@@ -37,7 +35,7 @@ function Slider({ slides }: { slides: { [p: string]: JSX.Element } }) {
           <MenuTwoTone />
         </IconBtn>
         <IconBtn as={Link} to={routes.newLocation()}>
-          <AddLocationTwoTone />
+          <AddLocationTwoTone fontSize="small" />
         </IconBtn>
       </Box>
     </Box>
