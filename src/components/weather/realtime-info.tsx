@@ -45,7 +45,7 @@ function RealtimeWeatherInfo({ weather }: { weather: ForecastQueryResponse }) {
   const currentTemp = degMeasure === 'c' ? weather.current.tempC : weather.current.tempF
 
   useEffect(() => {
-    getIconPath(weather.current.condition.code, !!weather.current.isDay).then(setIcon)
+    setIcon(getIconPath(weather.current.condition.code, !!weather.current.isDay))
   }, [weather])
 
   return (
