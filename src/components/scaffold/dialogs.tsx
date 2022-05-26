@@ -1,9 +1,12 @@
 import { Theme } from '@emotion/react'
 import { CloseTwoTone } from '@mui/icons-material'
-import { ComponentType, CSSProperties, lazy, Suspense, useContext, useEffect, useState } from 'react'
+import {
+  ComponentType, lazy, Suspense, useContext, useEffect, useState
+} from 'react'
 import { Box } from '../atoms/box'
-import { IconBtn } from '../atoms/icon-btn'
-import { Portal } from '../atoms/portal'
+import IconBtn from '../atoms/icon-btn'
+import Portal from '../atoms/portal'
+import Spinner from '../atoms/spinner'
 import { Text } from '../atoms/text'
 import { ScaffoldCtx } from './context'
 import { dialogsInitialState } from './context/dialogs'
@@ -18,9 +21,9 @@ const styles = {
     maxWidth: theme.spacing(60),
     maxHeight: '50vh',
     overflow: 'hidden',
-    padding: theme.spacing(2,3),
+    padding: theme.spacing(2, 3),
     transition: `all ${theme.transitions.duration.normal} ${theme.transitions.timing}`,
-    width: '72%',
+    width: '72%'
   }),
   title: (theme: Theme): any => ({
     alignItems: 'center',
@@ -30,30 +33,28 @@ const styles = {
   })
 }
 
-const DialogContent = (dialog: typeof dialogsInitialState) => {
+function DialogContent({ content, open }: typeof dialogsInitialState) {
   const [Content, setContent] = useState<ComponentType | null>(null)
 
   useEffect(() => {
-    if (dialog.open && dialog.content) {
-      const content = lazy(() => import((`../dialogs/${dialog.content}.tsx`)))
-      if (content) {
-        setContent(content)
+    if (open && content) {
+      const comp = lazy(() => import((`../dialogs/${content}.tsx`)))
+      if (comp) {
+        setContent(comp)
       } else {
         setContent(null)
       }
     }
-  }, [dialog.open, dialog.content])
-
-  const Loader = () => <Box>Loading ...</Box>
+  }, [open, content])
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<Spinner />}>
       {Content ? <Content /> : null}
     </Suspense>
   )
 }
 
-export const Dialogs = () => {
+function Dialogs() {
   const { dialogs: { state, actions } } = useContext(ScaffoldCtx)
 
   return state.open ? (
@@ -65,8 +66,11 @@ export const Dialogs = () => {
             <CloseTwoTone fontSize="small" />
           </IconBtn>
         </Box>
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <DialogContent {...state} />
       </Box>
     </Portal>
   ) : null
 }
+
+export default Dialogs
