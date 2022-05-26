@@ -1,11 +1,7 @@
 import i18n from '../locales'
 
-export const parse24hTime = (dateTime: string, locale: string = 'es-CO') => new Intl
-  .DateTimeFormat(locale, { timeStyle: 'short' })
-  .format(new Date(dateTime))
-
-export const parseShortDate = (dateTime: string, locale: string = 'es-CO') => new Intl
-  .DateTimeFormat(locale, { dateStyle: 'short' })
+export const parse24hTime = (dateTime: string) => new Intl
+  .DateTimeFormat(i18n.language, { timeStyle: 'short' })
   .format(new Date(dateTime))
 
 export const parseRelativeTime = (dateTime: string) => new Intl

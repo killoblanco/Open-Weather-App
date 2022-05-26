@@ -1,7 +1,7 @@
-import { Theme } from '@emotion/react'
-import { CSSProperties } from 'react'
-import { Box } from './box'
-import { Text } from './text'
+import { Theme } from '@emotion/react';
+import { CSSProperties } from 'react';
+import { Box } from './box';
+import { Text } from './text';
 
 interface ListItemProps {
   icon?: JSX.Element;
@@ -19,20 +19,22 @@ const styles = {
     gap: theme.spacing(2),
     padding: theme.spacing(2, 0),
     '&:not(:last-of-type)': {
-      borderBottom: `1px solid ${theme.colors.main[theme.colors.mode].outline}44`
+      borderBottom: `1px solid ${theme.colors.main[theme.colors.mode].outline}44`,
     },
-    '& svg': { width: theme.spacing(3) }
+    '& svg': { width: theme.spacing(3) },
   }),
   title: { textTransform: 'capitalize' } as CSSProperties,
   text: {
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
-    gap: 0
-  } as CSSProperties
-}
+    gap: 0,
+  } as CSSProperties,
+};
 
-function ListItem({ icon, onClick, subtitle, title, trailing }: ListItemProps) {
+function ListItem({
+  icon, onClick, subtitle, title, trailing,
+}: ListItemProps) {
   return (
     <Box onClick={onClick} role="presentation" sx={styles.root}>
       {icon}
@@ -42,7 +44,14 @@ function ListItem({ icon, onClick, subtitle, title, trailing }: ListItemProps) {
       </Box>
       {trailing}
     </Box>
-  )
+  );
 }
 
-export default ListItem
+ListItem.defaultProps = {
+  icon: null,
+  onClick: null,
+  subtitle: null,
+  trailing: null,
+}
+
+export default ListItem;

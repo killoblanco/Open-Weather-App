@@ -1,10 +1,9 @@
-import styled from '@emotion/styled'
-import { BoxProps } from './box'
+import styled from '@emotion/styled';
+import { BoxProps } from './box';
 
-interface IconBtnProps extends BoxProps {
-}
+type IconBtnProps = BoxProps
 
-export const IconBtn = styled.button<IconBtnProps & any>(({ theme, sx }) => ({
+const IconBtn = styled.button<IconBtnProps & any>(({ theme, sx }) => ({
   backgroundColor: 'transparent',
   borderRadius: '50%',
   border: 'none',
@@ -12,7 +11,9 @@ export const IconBtn = styled.button<IconBtnProps & any>(({ theme, sx }) => ({
   display: 'flex',
   ...(sx ? (typeof sx === 'function' ? sx(theme) : sx) : {}),
   '&:hover, &:active, &:focus': { backgroundColor: 'transparent' },
-  '& svg': { fontSize: theme.spacing(4) }
-}))
+  '& svg': { fontSize: theme.spacing(4) },
+}));
 
-IconBtn.defaultProps = { type: 'button' }
+IconBtn.defaultProps = { type: 'button' };
+
+export default IconBtn;

@@ -1,8 +1,8 @@
 export const parseLocationResponse = (response: any): WeatherApiState['location'] => ({
   ...response,
   tzId: response.tz_id,
-  localtimeEpoch: response.localtime_epoch
-})
+  localtimeEpoch: response.localtime_epoch,
+});
 
 export const parseCurrentResponse = (response: any): WeatherApiState['current'] => ({
   ...response,
@@ -24,13 +24,13 @@ export const parseCurrentResponse = (response: any): WeatherApiState['current'] 
   visKm: response.vis_km,
   visMiles: response.vis_miles,
   gustMph: response.gust_mph,
-  gustKph: response.gust_kph
-})
+  gustKph: response.gust_kph,
+});
 
 export const parseAstronomyResponse = (response: any): WeatherApiState['astronomy'] => ({
   ...response,
-  moonPhase: response.moon_phase
-})
+  moonPhase: response.moon_phase,
+});
 
 export const parseForecastDay = (day: any) => ({
   ...day,
@@ -61,8 +61,8 @@ export const parseForecastDay = (day: any) => ({
   visKm: day.vis_km,
   visMiles: day.vis_miles,
   gustMph: day.gust_mph,
-  gustKph: day.gust_kph
-})
+  gustKph: day.gust_kph,
+});
 
 export const parseForecastResponse = (response: any[]): WeatherApiState['forecast'] => (response || [])
   .map((data: any) => ({
@@ -84,8 +84,8 @@ export const parseForecastResponse = (response: any[]): WeatherApiState['forecas
       dailyWillItRain: data.day.daily_will_it_rain,
       dailyChanceOfRain: data.day.daily_chance_of_rain,
       dailyWillItSnow: data.day.daily_will_it_snow,
-      dailyChanceOfSnow: data.day.daily_chance_of_snow
+      dailyChanceOfSnow: data.day.daily_chance_of_snow,
     },
     astro: parseAstronomyResponse(data.astro),
-    hour: data.hour.map(parseForecastDay)
-  }))
+    hour: data.hour.map(parseForecastDay),
+  }));

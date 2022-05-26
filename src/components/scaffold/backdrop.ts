@@ -1,7 +1,7 @@
-import styled from '@emotion/styled'
-import { CSSProperties } from 'react'
+import styled from '@emotion/styled';
+import { CSSProperties } from 'react';
 
-export const Backdrop = styled.div<{ justify?: CSSProperties['justifyContent'] }>(({ theme, justify }) => ({
+const Backdrop = styled.div<{ justify?: CSSProperties['justifyContent'] }>(({ theme, justify }) => ({
   alignItems: 'center',
   backdropFilter: `blur(${theme.spacing(0.5)})`,
   backgroundColor: `${theme.colors.main[theme.colors.mode].surface}11`,
@@ -13,5 +13,7 @@ export const Backdrop = styled.div<{ justify?: CSSProperties['justifyContent'] }
   padding: theme.spacing(4),
   position: 'fixed',
   top: 0,
-  width: `calc(100vw - ${theme.spacing(8)})`
-}))
+  width: `calc(100vw - ${theme.spacing(8)})`,
+}));
+
+export default Backdrop;

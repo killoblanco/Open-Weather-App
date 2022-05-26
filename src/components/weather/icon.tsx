@@ -1,6 +1,3 @@
-import styled from '@emotion/styled'
-import { useEffect, useMemo, useState } from 'react'
-
 const codes = {
   day: {
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fclear-cloudy.png?alt=media&token=a2710391-7115-4457-a152-6265403bdeab': [1003],
@@ -15,7 +12,7 @@ const codes = {
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fsunny.png?alt=media&token=c791072c-d512-40a1-b31c-177831964699': [1000],
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fthunderstroms-2.png?alt=media&token=c85f9827-4422-440b-8a7c-1bec858a9561': [1246, 1276, 1282],
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fthunderstroms-sunny.png?alt=media&token=6071af0c-07d5-4a14-b607-5e182cba0a96': [1087, 1243, 1273, 1279],
-    'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fwindy.png?alt=media&token=b9df7e61-bd14-45ad-be55-e0a98b3f5ff3': [1114, 1117]
+    'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fwindy.png?alt=media&token=b9df7e61-bd14-45ad-be55-e0a98b3f5ff3': [1114, 1117],
   },
   night: {
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fclear-cloudy-night.png?alt=media&token=e49030bc-f73b-4e39-9196-60a73daa0491': [1003],
@@ -30,46 +27,19 @@ const codes = {
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fnight.png?alt=media&token=56331c8d-3ea2-4354-9c2a-c4cc383b3fd7': [1000],
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fthunderstroms-2.png?alt=media&token=c85f9827-4422-440b-8a7c-1bec858a9561': [1246, 1276, 1282],
     'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fthunderstroms-sunny-night.png?alt=media&token=3392a650-8760-40a1-b776-65c8ba272a28': [1087, 1243, 1273, 1279],
-    'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fwindy.png?alt=media&token=b9df7e61-bd14-45ad-be55-e0a98b3f5ff3': [1114, 1117]
-  }
-}
+    'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fwindy.png?alt=media&token=b9df7e61-bd14-45ad-be55-e0a98b3f5ff3': [1114, 1117],
+  },
+};
 
-const Img = styled.img(({ theme }) => ({
-  aspectRatio: '1 / 1',
-  maxWidth: theme.spacing(16)
-}))
-
-export const getIconPath = (code: number, isDay: boolean) => {
-  let icon = 'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fsunny.png?alt=media&token=c791072c-d512-40a1-b31c-177831964699'
+const getIconPath = (code: number, isDay: boolean) => {
+  let icon = 'https://firebasestorage.googleapis.com/v0/b/killoblanco-119f3.appspot.com/o/weather%2Fsunny.png?alt=media&token=c791072c-d512-40a1-b31c-177831964699';
 
   Object.entries(codes[isDay ? 'day' : 'night'])
     .forEach(([key, value]) => {
-      if (value.includes(code)) icon = key
-    })
+      if (value.includes(code)) icon = key;
+    });
 
-  return icon
-}
+  return icon;
+};
 
-function WeatherIcon({ code, isDay }: { code: number, isDay: boolean }) {
-  const [path, setPath] = useState('')
-
-  const name = useMemo(() => {
-    let icon = 'sunny'
-    Object.entries(codes[isDay ? 'day' : 'night'])
-      .forEach(([key, value]) => {
-        if (value.includes(code)) icon = key
-      })
-    return icon
-  }, [code, isDay])
-
-  useEffect(() => {
-    import(`../../assets/${name}.png`)
-      .then(path => setPath(path.default))
-  }, [name])
-
-  if (!path) return null
-
-  return (<Img src={path} alt={name} />)
-}
-
-export default WeatherIcon
+export default getIconPath;

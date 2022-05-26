@@ -1,11 +1,12 @@
-import { Backdrop } from '../scaffold/backdrop'
-import { Spinner } from './spinner'
+import Backdrop from '../scaffold/backdrop'
+import Spinner from './spinner'
 
-
-export const Loader = () => {
+function Loader() {
   return (
     <Backdrop justify="center">
       <Spinner />
     </Backdrop>
   )
 }
+
+export default Loader

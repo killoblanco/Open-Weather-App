@@ -3,7 +3,7 @@ import { RootState } from './store'
 
 export const locationsInitialState = {
   geo: 'auto:ip',
-  list: [] as string[],
+  list: [] as string[]
 }
 
 export type LocationsState = typeof locationsInitialState
@@ -12,15 +12,15 @@ const locationsSlice = createSlice({
   name: 'locations',
   initialState: locationsInitialState,
   reducers: {
-    setGeo: (state, action) => {
-      state.geo = action.payload
-    },
-    addLocation: (state, action) => {
-      state.list = Array.from(new Set([...state.list, action.payload]))
-    },
-    removeLocation: (state, action) => {
-      state.list = state.list.filter(location => location !== action.payload)
-    }
+    setGeo: (state, action) => ({ ...state, geo: action.payload }),
+    addLocation: (state, action) => ({
+      ...state,
+      list: Array.from(new Set([...state.list, action.payload]))
+    }),
+    removeLocation: (state, action) => ({
+      ...state,
+      list: state.list.filter((location) => location !== action.payload)
+    })
   }
 })
 

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { locationsActions } from '../duck/locations'
 import { AppDispatch } from '../duck/store'
 
-export const useGeo = () => {
+const useGeo = () => {
   const dispatch = useDispatch<AppDispatch>()
 
   const handleGeo = (position: GeolocationPosition) => dispatch(
@@ -18,3 +18,5 @@ export const useGeo = () => {
     )
   }, [])
 }
+
+export default useGeo

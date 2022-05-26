@@ -1,14 +1,14 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NotFoundScreen from './404'
-import MainScreen from './main'
-import NewLocationScreen from './new-location'
-import SettingsScreen from './settings'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NotFoundScreen from './404';
+import MainScreen from './main';
+import NewLocationScreen from './new-location';
+import SettingsScreen from './settings';
 
 export const routes = {
   main: () => '/',
   newLocation: () => '/new-location',
-  settings: () => '/settings'
-}
+  settings: () => '/settings',
+};
 
 function Router() {
   return (
@@ -20,7 +20,7 @@ function Router() {
         <Route path="*" element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default Router
+export default Router;

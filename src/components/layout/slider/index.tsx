@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { routes } from '../../../screens/router'
 import { Box } from '../../atoms/box'
-import { IconBtn } from '../../atoms/icon-btn'
+import IconBtn from '../../atoms/icon-btn'
 import { useDialogs } from '../../scaffold/context'
-import { styles } from './styles'
+import styles from './styles'
 
 function Slider({ slides }: { slides: { [p: string]: JSX.Element } }) {
   const { t } = useTranslation()

@@ -1,17 +1,10 @@
-import { Theme } from '@emotion/react'
 import { nanoid } from '@reduxjs/toolkit'
-import { CSSProperties, useContext } from 'react'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useSettings } from '../../hooks/use-settings'
+import useSettings from '../../hooks/use-settings'
 import { Box } from '../atoms/box'
 import ListItem from '../atoms/list-item'
 import { ScaffoldCtx } from '../scaffold/context'
-
-const styles = {
-  root: (theme: Theme): CSSProperties => ({
-    overflow: 'auto'
-  })
-}
 
 function LangDialog() {
   const { t } = useTranslation()
@@ -25,8 +18,8 @@ function LangDialog() {
   }
 
   return (
-    <Box sx={styles.root}>
-      {locales.map(locale => (
+    <Box sx={{ overflow: 'auto' }}>
+      {locales.map((locale) => (
         <ListItem
           key={nanoid(6)}
           onClick={() => handleClose(locale)}

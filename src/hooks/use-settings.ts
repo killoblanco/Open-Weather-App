@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { settingsActions, settingsSelectors } from '../duck/settings'
 import { AppDispatch } from '../duck/store'
-import { ColorPaletteMap, colors } from '../styles/colors'
+import { ColorPaletteMap } from '../styles/colors'
 
-export const useSettings = () => {
+const useSettings = () => {
   const state = useSelector(settingsSelectors)
   const dispatch = useDispatch<AppDispatch>()
 
@@ -16,3 +16,5 @@ export const useSettings = () => {
 
   return { state, actions }
 }
+
+export default useSettings
