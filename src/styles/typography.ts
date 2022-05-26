@@ -1,3 +1,5 @@
+import { Typography } from './emotion'
+
 export interface TypographyOptions {
   fontWeight: 500 | 400 | 'bold' | 'bolder' | 'lighter' | 'initial' | 'inherit' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
   fontSize: number;
@@ -22,11 +24,6 @@ export type TextVariant =
   | 'button'
   | 'caption'
   | 'overline';
-
-export interface Typography {
-  fontFamily: string;
-  styles: { [key in TextVariant]: TypographyOptions };
-}
 
 export const typography: Typography = {
   fontFamily: 'sans-serif',
@@ -127,5 +124,5 @@ export const typography: Typography = {
       lineHeight: '16px',
       letterSpacing: 0.5,
     },
-  }
-}
+  },
+};

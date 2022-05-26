@@ -1,16 +1,16 @@
-import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
-import csLang from './cs.json'
-import daLang from './da.json'
-import deLang from './de.json'
-import enLang from './en.json'
-import esLang from './es.json'
-import fiLang from './fi.json'
-import frLang from './fr.json'
-import itLang from './it.json'
-import nlLang from './nl.json'
-import plLang from './pl.json'
-import ptLang from './pt.json'
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import csLang from './cs.json';
+import daLang from './da.json';
+import deLang from './de.json';
+import enLang from './en.json';
+import esLang from './es.json';
+import fiLang from './fi.json';
+import frLang from './fr.json';
+import itLang from './it.json';
+import nlLang from './nl.json';
+import plLang from './pl.json';
+import ptLang from './pt.json';
 
 i18n
   .use(initReactI18next)
@@ -26,10 +26,10 @@ i18n
       it: { translation: itLang },
       nl: { translation: nlLang },
       pl: { translation: plLang },
-      pt: { translation: ptLang }
+      pt: { translation: ptLang },
     },
     fallbackLng: navigator.language,
-    interpolation: { escapeValue: false }
-  })
+    interpolation: { escapeValue: false },
+  });
 
-export default i18n
+export default i18n;

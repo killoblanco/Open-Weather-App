@@ -1,11 +1,15 @@
-import { createContext, PropsWithChildren, useContext, useReducer } from 'react'
+/* eslint-disable @typescript-eslint/no-empty-function,
+ no-unused-vars, @typescript-eslint/no-unused-vars */
+import {
+  createContext, PropsWithChildren, useContext, useMemo, useReducer
+} from 'react'
 import { dialogsDuck, dialogsInitialState } from './dialogs'
 
 interface Ctx {
   dialogs: {
     state: typeof dialogsInitialState
     actions: {
-      open: ({ title, content }: Partial<typeof dialogsInitialState>) => void
+      open: ({ title, content, props }: Partial<typeof dialogsInitialState>) => void
       close: () => void
     }
   }
@@ -14,19 +18,19 @@ interface Ctx {
 export const ScaffoldCtx = createContext<Ctx>({
   dialogs: {
     actions: {
-      close: function () {
+      close() {
       },
-      open: function ({ title, content, props }: Partial<typeof dialogsInitialState>) {
+      open({ title, content, props }: Partial<typeof dialogsInitialState>) {
       }
     },
     state: dialogsInitialState
   }
 })
 
-export const ScaffoldCtxProvider = ({ children }: PropsWithChildren<unknown>) => {
+export function ScaffoldCtxProvider({ children }: PropsWithChildren<unknown>) {
   const [dialogs, dispatchDialogs] = useReducer(dialogsDuck.reducer, dialogsInitialState)
 
-  const ctx = {
+  const ctx = useMemo(() => ({
     dialogs: {
       state: dialogs,
       actions: {
@@ -36,7 +40,7 @@ export const ScaffoldCtxProvider = ({ children }: PropsWithChildren<unknown>) =>
         close: () => dispatchDialogs(dialogsDuck.actions.closeDialog())
       }
     }
-  }
+  }), [dispatchDialogs, dialogs])
 
   return (
     <ScaffoldCtx.Provider value={ctx}>

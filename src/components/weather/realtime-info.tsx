@@ -1,10 +1,10 @@
-import { Theme } from '@emotion/react'
-import { CSSProperties, useEffect, useState } from 'react'
-import { useSettings } from '../../hooks/use-settings'
-import { Box } from '../atoms/box'
-import { SunkenText } from '../atoms/sunken-text'
-import SettingsBtn from '../buttons/settings-btn'
-import { getIconPath } from './icon'
+import { Theme } from '@emotion/react';
+import { CSSProperties, useEffect, useState } from 'react';
+import useSettings from '../../hooks/use-settings';
+import { Box } from '../atoms/box';
+import { SunkenText } from '../atoms/sunken-text';
+import SettingsBtn from '../buttons/settings-btn';
+import getIconPath from './icon';
 
 const styles = {
   root: (icon: string) => (theme: Theme): any => ({
@@ -25,7 +25,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
-    gap: theme.spacing(0)
+    gap: theme.spacing(0),
   }),
   text: (theme: Theme): any => ({
     display: 'flex',
@@ -34,19 +34,19 @@ const styles = {
     width: '100%',
     alignItems: 'center',
     gap: theme.spacing(0),
-    '& > p': { fontSize: theme.spacing(12) }
-  })
-}
+    '& > p': { fontSize: theme.spacing(12) },
+  }),
+};
 
 function RealtimeWeatherInfo({ weather }: { weather: ForecastQueryResponse }) {
-  const { state: { degMeasure } } = useSettings()
-  const [icon, setIcon] = useState('')
+  const { state: { degMeasure } } = useSettings();
+  const [icon, setIcon] = useState('');
 
-  const currentTemp = degMeasure === 'c' ? weather.current.tempC : weather.current.tempF
+  const currentTemp = degMeasure === 'c' ? weather.current.tempC : weather.current.tempF;
 
   useEffect(() => {
-    setIcon(getIconPath(weather.current.condition.code, !!weather.current.isDay))
-  }, [weather])
+    setIcon(getIconPath(weather.current.condition.code, !!weather.current.isDay));
+  }, [weather]);
 
   return (
     <Box sx={styles.root(icon)}>
@@ -55,11 +55,14 @@ function RealtimeWeatherInfo({ weather }: { weather: ForecastQueryResponse }) {
         <SettingsBtn />
       </Box>
       <Box sx={styles.text}>
-        <SunkenText variant="display1">{currentTemp}º</SunkenText>
+        <SunkenText variant="display1">
+          {currentTemp}
+          º
+        </SunkenText>
       </Box>
       <SunkenText variant="h1">{weather.current.condition.text}</SunkenText>
     </Box>
-  )
+  );
 }
 
-export default RealtimeWeatherInfo
+export default RealtimeWeatherInfo;

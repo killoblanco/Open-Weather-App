@@ -8,6 +8,7 @@ import { Text } from './text'
 interface TextFieldProps {
   label: string
   value: string
+  // eslint-disable-next-line no-unused-vars
   onChange: (value: ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -30,7 +31,7 @@ const Input = styled.input(({ theme }) => ({
   ...theme.typography.styles.body1
 }))
 
-export function TextField({ label, value, onChange }: TextFieldProps) {
+function TextField({ label, value, onChange }: TextFieldProps) {
   const id = nanoid(6)
 
   return (
@@ -42,3 +43,5 @@ export function TextField({ label, value, onChange }: TextFieldProps) {
     </Box>
   )
 }
+
+export default TextField

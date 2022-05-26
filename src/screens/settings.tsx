@@ -3,7 +3,6 @@ import {
   DarkModeTwoTone,
   LightModeTwoTone,
   PaletteTwoTone,
-  SquareFootTwoTone,
   ThermostatTwoTone,
   TranslateTwoTone
 } from '@mui/icons-material'
@@ -14,7 +13,7 @@ import ListItem from '../components/atoms/list-item'
 import { Text } from '../components/atoms/text'
 import BackBtn from '../components/buttons/back-btn'
 import { useDialogs } from '../components/scaffold/context'
-import { useSettings } from '../hooks/use-settings'
+import useSettings from '../hooks/use-settings'
 import { useThemeCtx } from '../styles/provider'
 
 const styles = {
@@ -66,7 +65,11 @@ function SettingsScreen() {
           title={t('settings.tempUnit')}
           trailing={(
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Text variant="h5">{settings.state.degMeasure.toUpperCase()} º</Text>
+              <Text variant="h5">
+                {settings.state.degMeasure.toUpperCase()}
+                {' '}
+                º
+              </Text>
             </Box>
           )}
         />

@@ -21,18 +21,10 @@ const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    setThemeColor: (state, action) => {
-      state.color = action.payload
-    },
-    setDarkMode: (state, action) => {
-      state.darkMode = action.payload
-    },
-    setDegMeasure: (state, action) => {
-      state.degMeasure = action.payload
-    },
-    setLang: (state, action) => {
-      state.lang = action.payload
-    }
+    setThemeColor: (state, action) => ({ ...state, color: action.payload }),
+    setDarkMode: (state, action) => ({ ...state, darkMode: action.payload }),
+    setDegMeasure: (state, action) => ({ ...state, degMeasure: action.payload }),
+    setLang: (state, action) => ({ ...state, lang: action.payload })
   }
 })
 

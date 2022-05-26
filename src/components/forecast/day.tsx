@@ -1,9 +1,9 @@
-import { Theme } from '@emotion/react'
-import { CSSProperties } from 'react'
-import { useSettings } from '../../hooks/use-settings'
-import { parse24hTime } from '../../utils/date-time'
-import { Box } from '../atoms/box'
-import { Text } from '../atoms/text'
+import { Theme } from '@emotion/react';
+import { CSSProperties } from 'react';
+import useSettings from '../../hooks/use-settings';
+import { parse24hTime } from '../../utils/date-time';
+import { Box } from '../atoms/box';
+import { Text } from '../atoms/text';
 
 const styles = {
   root: (theme: Theme): CSSProperties => ({
@@ -18,25 +18,28 @@ const styles = {
     flexDirection: 'column',
     gap: theme.spacing(0.5),
     justifyContent: 'center',
-  })
-}
+  }),
+};
 
 function ForecastDay({ day }: { day: WeatherApiState['forecast'][0]['hour'] }) {
-  const { state: { degMeasure } } = useSettings()
+  const { state: { degMeasure } } = useSettings();
 
-  const temp = (hour: any): number => degMeasure === 'c' ? hour.tempC : hour.tempF
+  const temp = (hour: any): number => (degMeasure === 'c' ? hour.tempC : hour.tempF);
 
   return (
     <Box sx={styles.root}>
-      {day.map(hour => (
+      {day.map((hour) => (
         <Box key={hour.time} sx={styles.item}>
-          <Text variant="subtitle2">{parse24hTime(hour.time, 'en-GB')}</Text>
+          <Text variant="subtitle2">{parse24hTime(hour.time)}</Text>
           <img src={hour.condition.icon} alt={hour.condition.text} />
-          <Text variant="h5">{temp(hour).toFixed(0)}º</Text>
+          <Text variant="h5">
+            {temp(hour).toFixed(0)}
+            º
+          </Text>
         </Box>
       ))}
     </Box>
-  )
+  );
 }
 
-export default ForecastDay
+export default ForecastDay;

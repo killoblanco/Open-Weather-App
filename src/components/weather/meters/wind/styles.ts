@@ -3,10 +3,9 @@ import { CSSProperties } from 'react'
 
 const compassStops = (theme: Theme) => Array
   .from({ length: 241 }, (_, i) => i + 1)
-  .map(degree => degree % 2 === 0
+  .map((degree) => (degree % 2 === 0
     ? `${theme.colors.main[theme.colors.mode].onSecondaryContainer}44`
-    : `${theme.colors.main[theme.colors.mode].secondaryContainer}44`
-  ).join(', ')
+    : `${theme.colors.main[theme.colors.mode].secondaryContainer}44`)).join(', ')
 
 const root: CSSProperties = {
   aspectRatio: '1 / 1',
@@ -78,7 +77,7 @@ const compassCardinals = (theme: Theme): any => ({
       fill: theme.colors.main[theme.colors.mode].primary,
       height: theme.spacing(2),
       weight: theme.spacing(2)
-    },
+    }
   },
   '& > div:nth-of-type(1)': {
     flexDirection: 'column',
@@ -107,4 +106,8 @@ const compassCardinals = (theme: Theme): any => ({
   }
 })
 
-export const styles = { root, info, compass, compassStop, compassCardinals }
+const styles = {
+  root, info, compass, compassStop, compassCardinals
+}
+
+export default styles
