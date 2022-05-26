@@ -1,12 +1,11 @@
-import { Theme } from '@emotion/react'
-import { CSSProperties } from 'react'
+import { Theme } from '@emotion/react';
+import { CSSProperties } from 'react';
 
 const stops = (theme: Theme) => Array
   .from({ length: 128 }, (_, i) => i + 1)
-  .map(degree => degree % 2 === 0
+  .map((degree) => (degree % 2 === 0
     ? `${theme.colors.main[theme.colors.mode].onSecondaryContainer}44`
-    : `${theme.colors.main[theme.colors.mode].secondaryContainer}44`
-  ).join(', ')
+    : `${theme.colors.main[theme.colors.mode].secondaryContainer}44`)).join(', ');
 
 const root: CSSProperties = {
   aspectRatio: '1 / 1',
@@ -18,8 +17,8 @@ const root: CSSProperties = {
   margin: '0 auto',
   placeItems: 'center',
   position: 'relative',
-  width: '84%'
-}
+  width: '84%',
+};
 
 const info: CSSProperties = {
   alignItems: 'center',
@@ -27,8 +26,8 @@ const info: CSSProperties = {
   flexDirection: 'column',
   gridArea: 'content',
   justifyContent: 'center',
-  zIndex: 7
-}
+  zIndex: 7,
+};
 
 const thumb = (deg: number) => (theme: Theme): any => ({
   alignItems: 'center',
@@ -42,9 +41,9 @@ const thumb = (deg: number) => (theme: Theme): any => ({
   zIndex: 5,
   '& svg:first-of-type': {
     fill: theme.colors.main[theme.colors.mode].primary,
-    transform: 'rotate(-90deg) scale(0.9)'
+    transform: 'rotate(-90deg) scale(0.9)',
   },
-})
+});
 
 const scale = (theme: Theme) => ({
   backgroundImage: `
@@ -61,7 +60,11 @@ const scale = (theme: Theme) => ({
   height: '100%',
   gridArea: 'content',
   width: '100%',
-  zIndex: 1
-})
+  zIndex: 1,
+});
 
-export const styles = { root, info, thumb, scale }
+const styles = {
+  root, info, thumb, scale,
+};
+
+export default styles;
