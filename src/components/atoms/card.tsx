@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Box } from './box'
 
-export const Card = styled(Box)(({ theme }) => ({
+const Card = styled(Box)(({ theme }) => ({
   aspectRatio: '1 / 1',
   backgroundColor: theme.colors.main[theme.colors.mode].secondaryContainer,
   backdropFilter: `blur(${theme.spacing(0.5)})`,
@@ -14,3 +14,5 @@ export const Card = styled(Box)(({ theme }) => ({
   flex: 1,
   '& *': { color: theme.colors.main[theme.colors.mode].onSecondaryContainer }
 }))
+
+export default Card
