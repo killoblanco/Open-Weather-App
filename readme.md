@@ -1,7 +1,11 @@
+# Open Weather App
+
 ![cover]
 
 Open Weather is an open-source app for viewing the current weather of a chosen location.
 The app uses [Rapid API] to retrieve weather information from weatherapi.com.
+
+## Live Demo: <small>[weather.kamilo.dev]</small>
 
 ## Features
 
@@ -43,3 +47,4 @@ The app uses [Rapid API] to retrieve weather information from weatherapi.com.
 
 [cover]: https://repository-images.githubusercontent.com/494268402/c9300911-d591-4cd0-9299-460aaa493b7c
 [Rapid API]: https://rapidapi.com/user/weatherapi
+[weather.kamilo.dev]: https://weather.kamilo.dev
