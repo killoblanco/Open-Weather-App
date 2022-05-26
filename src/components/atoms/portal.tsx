@@ -1,21 +1,25 @@
 import { PropsWithChildren, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { Backdrop } from '../scaffold/backdrop'
+import Backdrop from '../scaffold/backdrop'
 
-export const Portal = ({ children }: PropsWithChildren<unknown>) => {
-  const portalContainer = document.getElementById('backdrop')
+const Portal = ({ children }: PropsWithChildren<unknown>) => {
+  const portalContainer = document.getElementById('backdrop') as HTMLElement
   const el = document.createElement('div')
 
   useEffect(() => {
-    portalContainer!.appendChild(el)
+    portalContainer.appendChild(el)
     return () => {
-      portalContainer!.removeChild(el)
+      portalContainer.removeChild(el)
     }
   }, [])
 
-  return createPortal((
-    <Backdrop>
-      {children}
-    </Backdrop>
-  ), el)
+  return createPortal(
+    (
+      <Backdrop>
+        {children}
+      </Backdrop>
+    ), el
+  )
 }
+
+export default Portal
