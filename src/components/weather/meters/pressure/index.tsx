@@ -1,7 +1,7 @@
 import { SendTwoTone } from '@mui/icons-material'
 import { Box } from '../../../atoms/box'
 import { Text } from '../../../atoms/text'
-import { styles } from './styles'
+import styles from './styles'
 
 function PressureMeter({ current }: { current: WeatherApiState['current'] }) {
   const thumbPosition = (pressure?: number) => {
