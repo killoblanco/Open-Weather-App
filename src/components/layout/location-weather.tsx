@@ -1,19 +1,19 @@
-import { Theme } from '@emotion/react'
-import { useAstronomyQuery, useForecastQuery } from '../../duck/api'
-import { useSettings } from '../../hooks/use-settings'
-import { Box } from '../atoms/box'
-import { Loader } from '../atoms/loader'
-import ForecastDay from '../forecast/day'
-import ForecastNextDays from '../forecast/next-days'
-import FeelsLikeCard from '../weather/cards/feels-like'
-import HumidityCard from '../weather/cards/humidity'
-import PrecipCard from '../weather/cards/precip'
-import PressureCard from '../weather/cards/pressure'
-import SunRiseSetCard from '../weather/cards/sun-rise-set'
-import UvCard from '../weather/cards/uv'
-import VisibilityCard from '../weather/cards/visibility'
-import WindCard from '../weather/cards/wind'
-import RealtimeWeatherInfo from '../weather/realtime-info'
+import { Theme } from '@emotion/react';
+import { useAstronomyQuery, useForecastQuery } from '../../duck/api';
+import useSettings from '../../hooks/use-settings';
+import { Box } from '../atoms/box';
+import Loader from '../atoms/loader';
+import ForecastDay from '../forecast/day';
+import ForecastNextDays from '../forecast/next-days';
+import FeelsLikeCard from '../weather/cards/feels-like';
+import HumidityCard from '../weather/cards/humidity';
+import PrecipCard from '../weather/cards/precip';
+import PressureCard from '../weather/cards/pressure';
+import SunRiseSetCard from '../weather/cards/sun-rise-set';
+import UvCard from '../weather/cards/uv';
+import VisibilityCard from '../weather/cards/visibility';
+import WindCard from '../weather/cards/wind';
+import RealtimeWeatherInfo from '../weather/realtime-info';
 
 const styles = {
   root: (theme: Theme): any => ({
@@ -24,27 +24,27 @@ const styles = {
     width: `calc(100vw - ${theme.spacing(4)})`,
     maxWidth: theme.spacing(76),
     height: '100%',
-    overflow: 'hidden auto'
+    overflow: 'hidden auto',
   }),
   cards: (theme: Theme): any => ({
     display: 'flex',
     flexWrap: 'wrap',
-    gap: theme.spacing(2)
-  })
-}
+    gap: theme.spacing(2),
+  }),
+};
 
 function LocationWeatherLayout({ location }: { location: string }) {
-  const { state: { lang } } = useSettings()
-  const forecast = useForecastQuery({ q: location, lang })
-  const astronomy = useAstronomyQuery({ q: location, lang })
+  const { state: { lang } } = useSettings();
+  const forecast = useForecastQuery({ q: location, lang });
+  const astronomy = useAstronomyQuery({ q: location, lang });
 
-  const isLoading = forecast.isLoading || astronomy.isLoading
-  const isMissingData = !forecast.data || !astronomy.data
+  const isLoading = forecast.isLoading || astronomy.isLoading;
+  const isMissingData = !forecast.data || !astronomy.data;
 
-  if (isMissingData || isLoading) return <Loader />
+  if (isMissingData || isLoading) return <Loader />;
 
-  const forecastData = forecast.data!
-  const astronomyData = astronomy.data!
+  const forecastData = forecast.data!;
+  const astronomyData = astronomy.data!;
 
   return (
     <Box sx={styles.root}>
@@ -64,7 +64,7 @@ function LocationWeatherLayout({ location }: { location: string }) {
         <PressureCard current={forecastData.current} />
       </Box>
     </Box>
-  )
+  );
 }
 
-export default LocationWeatherLayout
+export default LocationWeatherLayout;
