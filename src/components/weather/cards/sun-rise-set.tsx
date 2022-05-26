@@ -1,26 +1,26 @@
-import { Theme } from '@emotion/react'
-import { BedTwoTone, FreeBreakfastTwoTone } from '@mui/icons-material'
-import { CSSProperties } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Box } from '../../atoms/box'
-import { Card } from '../../atoms/card'
-import { Text } from '../../atoms/text'
+import { Theme } from '@emotion/react';
+import { BedTwoTone, FreeBreakfastTwoTone } from '@mui/icons-material';
+import { CSSProperties } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Box } from '../../atoms/box';
+import Card from '../../atoms/card';
+import { Text } from '../../atoms/text';
 
 const styles = {
   root: { justifyContent: 'space-between' },
   row: (theme: Theme) => ({
     display: 'flex',
-    gap: theme.spacing(1)
+    gap: theme.spacing(1),
   }),
   group: (theme: Theme): CSSProperties => ({
     display: 'flex',
     flexDirection: 'column',
-    gap: theme.spacing(1.25)
-  })
-}
+    gap: theme.spacing(1.25),
+  }),
+};
 
 function SunRiseSetCard({ astro }: { astro: WeatherApiState['astronomy'] }) {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <Card sx={styles.root}>
       <Box sx={styles.group}>
@@ -42,7 +42,7 @@ function SunRiseSetCard({ astro }: { astro: WeatherApiState['astronomy'] }) {
         </Box>
       </Box>
     </Card>
-  )
+  );
 }
 
-export default SunRiseSetCard
+export default SunRiseSetCard;
