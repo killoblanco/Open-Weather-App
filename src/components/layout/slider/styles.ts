@@ -1,7 +1,7 @@
 import { Theme } from '@emotion/react'
 import { CSSProperties } from 'react'
 
-export const styles = {
+const styles = {
   root: (theme: Theme): CSSProperties => ({
     maxWidth: theme.spacing(76),
     display: 'grid',
@@ -11,7 +11,7 @@ export const styles = {
     gridGap: theme.spacing(2),
     margin: '0 auto',
     width: `calc(100vw - ${theme.spacing(4)})`,
-    height: `calc(100vh - ${theme.spacing(5)})`,
+    height: `calc(100vh - ${theme.spacing(5)})`
   }),
   slides: (theme: Theme): any => ({
     gridArea: 'slides',
@@ -22,10 +22,12 @@ export const styles = {
     width: 'fit-content',
     '& > div': { scrollSnapAlign: 'start' }
   }),
-  dots: (theme: Theme): CSSProperties => ({
+  dots: {
     gridArea: 'dots',
     display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center'
-  })
+  } as CSSProperties
 }
+
+export default styles
