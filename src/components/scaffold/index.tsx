@@ -4,7 +4,7 @@ import useSettings from '../../hooks/use-settings';
 import i18n from '../../locales';
 import { Box } from '../atoms/box';
 import { ScaffoldCtxProvider } from './context';
-import { Dialogs } from './dialogs';
+import Dialogs from './dialogs';
 
 const styles = {
   root: (theme: Theme): CSSProperties => ({
